@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="okWildflowers:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/okWildflowers_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="okWildflowers/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="okWildflowers" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/lib/java-json.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/postgis-jdbc-2.3.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/lib/postgresql-42.2.10.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
