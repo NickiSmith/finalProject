@@ -24,11 +24,9 @@ console.log(event);
 }
 
 
-//QUESTION #4 - create a createObservations function to send data to database when user inputs in create observations tab
 function createObservation(event) {
     event.preventDefault(); // stop form from submitting normally
 
-    //QUESTION #4: get coordinates
     longitude = place.geometry.location.lng();
     latitude= place.geometry.location.lat();
 
@@ -59,6 +57,8 @@ function createObservation(event) {
         }
     });
 }
+
+
 
 $("#create_observation_form").on("submit",createObservation);
 

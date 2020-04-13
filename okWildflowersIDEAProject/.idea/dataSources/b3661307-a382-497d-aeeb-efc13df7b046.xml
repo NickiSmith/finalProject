@@ -26,8 +26,8 @@
       <Owner>postgres</Owner>
       <IntrospectionStateNumber>1242</IntrospectionStateNumber>
       <Current>1</Current>
-      <Relations>sequence|table|17518|17520|29
-sequence|table|17573|17564|9
+      <Relations>sequence|table|17573|17564|9
+sequence|table|17518|17520|29
 </Relations>
     </database>
     <database id="7" parent="1" name="postgres">

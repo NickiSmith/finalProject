@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class DBUtilityOK {
     private static final String Driver = "org.postgresql.Driver";
-    private static final String ConnUrl = "jdbc:postgresql://localhost:5432/okwildflowerstest";
+    private static final String ConnUrl = "jdbc:postgresql://localhost:5432/okwildflowers";
     private static final String Username = "postgres";
     private static final String Password = "postgres";
 
@@ -75,7 +75,7 @@ public class DBUtilityOK {
         // 2. query the database
         ResultSet res = util.queryDB("select * from wildflowers");
         while (res.next()) {
-            System.out.println(res.getString("county"));
+            System.out.println(res.getString("common_name"));
         }
 
     }

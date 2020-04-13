@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="okwildflowerstest@localhost" uuid="b3661307-a382-497d-aeeb-efc13df7b046">
+    <data-source source="LOCAL" name="okwildflowers@localhost" uuid="9d841227-0ceb-4f4c-8ca0-faf3d85dc960">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/okwildflowerstest</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/okwildflowers</jdbc-url>
     </data-source>
   </component>
 </project>

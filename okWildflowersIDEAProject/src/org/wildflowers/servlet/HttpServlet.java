@@ -114,126 +114,83 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
 
     }
 
-//    private void queryObservation(HttpServletRequest request, HttpServletResponse
-//            response) throws JSONException, SQLException, IOException {
-//        //create an empty JSON array to pass into the query helper
-//        JSONArray list = new JSONArray();
-//
-//        String report_type = request.getParameter("report_type");
-//
-//        // select records based on report type (where clause at end of sql statement)
-//        if (report_type == null) {
-//            String sql = "select id, county, report_type, " +
-//                    "scientific_name, ST_X(geom) as " +
-//                    "longitude, ST_Y(geom) as latitude from wildflowers where report_type is null";
-//            queryObservationHelper(sql,list,null);
-//        }
-//
-//        if (report_type == null || report_type.equalsIgnoreCase("test3")) {
-//            String sql = "select id, county, report_type, " +
-//                    "scientific_name, ST_X(geom) as " +
-//                    "longitude, ST_Y(geom) as latitude from wildflowers where report_type = 'test3'";
-//            queryObservationHelper(sql,list,"test3");
-//        }
-//
-//        if (report_type == null || report_type.equalsIgnoreCase("test2")) {
-//            String sql = "select id, county, report_type, " +
-//                    "scientific_name, ST_X(geom) as " +
-//                    "longitude, ST_Y(geom) as latitude from wildflowers where report_type = 'test2'";
-//            queryObservationHelper(sql,list,"test2");
-//        }
-//
-//        if (report_type == null || report_type.equalsIgnoreCase("test")) {
-//            String sql = "select id, county, report_type, " +
-//                    "scientific_name, ST_X(geom) as " +
-//                    "longitude, ST_Y(geom) as latitude from wildflowers where report_type = 'test'";
-//            queryObservationHelper(sql,list,"test");
-//        }
-//
-//        response.getWriter().write(list.toString());
-//    }
-//
-//    private void queryObservationHelper(String sql, JSONArray list, String report_type) throws SQLException {
-//        DBUtilityOK dbutil = new DBUtilityOK();
-//
-////        if (report_type.equalsIgnoreCase("test")) {
-////            System.out.println("test");
-////        }
-////        else if (report_type.equalsIgnoreCase("test2")) {
-////            System.out.println("test2");
-////        }
-//
-//        ResultSet res = dbutil.queryDB(sql);
-//        while (res.next()) {
-//            // add to response
-//            HashMap<String, String> m = new HashMap<String,String>();
-//            m.put("wildflowers_id", res.getString("id"));
-//            m.put("report_type", res.getString("report_type"));
-//            m.put("county", res.getString("county"));
-//            m.put("longitude", res.getString("longitude"));
-//            m.put("latitude", res.getString("latitude"));
-//            list.put(m);
-//        }
-//    }
-
     private void queryObservation(HttpServletRequest request, HttpServletResponse
             response) throws JSONException, SQLException, IOException {
         //create an empty JSON array to pass into the query helper
         JSONArray list = new JSONArray();
 
-        String date = request.getParameter("date");
+        String genusParam = request.getParameter("genus");
+        String commonParam = request.getParameter("common");
+        String countyParam = request.getParameter("county");
 
-        // select records based on report type (where clause at end of sql statement)
-//        if (report_type == null) {
-//            String sql = "select id, county, date, " +
-//                    "scientific_name, ST_X(geom) as " +
-//                    "longitude, ST_Y(geom) as latitude from wildflowers where date is null";
-//            queryObservationHelper(sql,list,null);
-//        }
-
-        if (date == null || date.equalsIgnoreCase("1800")) {
-            String sql = "select id, county, date, " +
+        if (genusParam == null && commonParam == null && countyParam ==null) {
+            String sql = "select id, common_name, biome, recorded_by, county, date, " +
                     "scientific_name, ST_X(geom) as " +
-                    "longitude, ST_Y(geom) as latitude from wildflowers where date >= '1800-01-01'";
-            queryObservationHelper(sql,list,"1800");
+                    "longitude, ST_Y(geom) as latitude from wildflowers";
+            queryObservationHelper(sql,list);
         }
 
-        if (date == null || date.equalsIgnoreCase("1900")) {
-            String sql = "select id, county, date, " +
+        if (genusParam != null && commonParam == null && countyParam ==null) {
+            String sql = "select id, common_name, biome, recorded_by, county, date, " +
                     "scientific_name, ST_X(geom) as " +
-                    "longitude, ST_Y(geom) as latitude from wildflowers where date >= '1900-01-01'";
-            queryObservationHelper(sql,list,"1900");
+                    "longitude, ST_Y(geom) as latitude from wildflowers where genus = " + "'" + genusParam + "'";
+            queryObservationHelper(sql,list);
         }
 
-        if (date == null || date.equalsIgnoreCase("2000")) {
-            String sql = "select id, county, date, " +
+        if (genusParam != null && commonParam != null && countyParam == null) {
+            String sql = "select id, common_name, biome, recorded_by, county, date, " +
                     "scientific_name, ST_X(geom) as " +
-                    "longitude, ST_Y(geom) as latitude from wildflowers where date >= '2000-01-01'";
-            queryObservationHelper(sql,list,"2000");
+                    "longitude, ST_Y(geom) as latitude from wildflowers where genus = "
+                    + "'" + genusParam + "' and common_name = '" + commonParam + "'";
+            queryObservationHelper(sql,list);
         }
 
+        if (genusParam != null && commonParam != null && countyParam != null) {
+            String sql = "select id, common_name, biome, recorded_by, county, date, " +
+                    "scientific_name, ST_X(geom) as " +
+                    "longitude, ST_Y(geom) as latitude from wildflowers where common_name = " + "'" + commonParam + "' " +
+                    "and county = '" + countyParam + "' and genus =" + "'" + genusParam + "'";
+            queryObservationHelper(sql,list);
+        }
+
+        if (genusParam == null && commonParam == null && countyParam != null) {
+            String sql = "select id, common_name, biome, recorded_by, county, date, " +
+                    "scientific_name, ST_X(geom) as " +
+                    "longitude, ST_Y(geom) as latitude from wildflowers where county = " + "'" + countyParam + "'";
+            queryObservationHelper(sql,list);
+        }
+        if (genusParam == null && commonParam != null && countyParam == null) {
+            String sql = "select id, common_name, biome, recorded_by, county, date, " +
+                    "scientific_name, ST_X(geom) as " +
+                    "longitude, ST_Y(geom) as latitude from wildflowers where common_name = " + "'" + commonParam + "'";
+            queryObservationHelper(sql,list);
+        }
+        if (genusParam == null && commonParam != null && countyParam != null) {
+            String sql = "select id, common_name, biome, recorded_by, county, date, " +
+                    "scientific_name, ST_X(geom) as " +
+                    "longitude, ST_Y(geom) as latitude from wildflowers where common_name = " + "'" + commonParam + "'" +
+                    "and county = '" + countyParam + "'";
+            queryObservationHelper(sql,list);
+        }
         response.getWriter().write(list.toString());
     }
 
-    private void queryObservationHelper(String sql, JSONArray list, String date) throws SQLException {
+    private void queryObservationHelper(String sql, JSONArray list) throws SQLException {
         DBUtilityOK dbutil = new DBUtilityOK();
-
-//        if (report_type.equalsIgnoreCase("test")) {
-//            System.out.println("test");
-//        }
-//        else if (report_type.equalsIgnoreCase("test2")) {
-//            System.out.println("test2");
-//        }
 
         ResultSet res = dbutil.queryDB(sql);
         while (res.next()) {
             // add to response
             HashMap<String, String> m = new HashMap<String,String>();
-            m.put("wildflowers_id", res.getString("id"));
+            m.put("id", res.getString("id"));
             m.put("date", res.getString("date"));
             m.put("county", res.getString("county"));
             m.put("longitude", res.getString("longitude"));
             m.put("latitude", res.getString("latitude"));
+            m.put("scientific_name", res.getString("scientific_name"));
+            m.put("common_name", res.getString("common_name"));
+            m.put("recorded_by", res.getString("recorded_by"));
+            m.put("biome", res.getString("biome"));
             list.put(m);
         }
     }

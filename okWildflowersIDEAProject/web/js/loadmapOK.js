@@ -43,9 +43,15 @@ console.log("inside mapInitialization")
         bounds.extend(latlng);
 
         // Create the infoWindow content (simplified to just county)
-        var contentStr = '<h4>Report Details</h4><hr>';
-        contentStr += '<p><b>' + 'county' + ':</b>&nbsp' + e['county'] + '</p>';
-        contentStr += '<p><b>' + 'report type' + ':</b>&nbsp' + e['report_type'] + '</p>';
+        var common = e['common_name']
+        var commonR = common.replace('_', '\'')
+        var contentStr = '<h4>Observation Details</h4><hr>';
+        contentStr += '<p><b>' + 'Common name' + ':</b>&nbsp' + commonR + '</p>';
+        contentStr += '<p><b>' + 'Scientific name' + ':</b>&nbsp' + e['scientific_name'] + '</p>';
+        contentStr += '<p><b>' + 'County' + ':</b>&nbsp' + e['county'] + '</p>';
+        contentStr += '<p><b>' + 'Biome' + ':</b>&nbsp' + e['biome'] + '</p>';
+        contentStr += '<p><b>' + 'Recorded by' + ':</b>&nbsp' + e['recorded_by'] + '</p>';
+        contentStr += '<p><b>' + 'Date' + ':</b>&nbsp' + e['date'] + '</p>';
 
         var marker = new google.maps.Marker({ // Set the marker
             position : latlng, // Position marker to coordinates

@@ -13,18 +13,18 @@ public class JDBCDemoOK {
             Class.forName("org.postgresql.Driver");
 
             // establish connection
-            String url = "jdbc:postgresql://localhost:5432/okWildflowers";
+            String url = "jdbc:postgresql://localhost:5432/okwildflowers";
             conn = DriverManager.getConnection(url, "postgres", "postgres");
 
             // query the database
-            String sql = "select county from wildflowers where county='Cimarron'";
+            String sql = "select * from wildflowers where county='Osage'";
             stmt = conn.createStatement();
             ResultSet res = stmt.executeQuery(sql);
 
             // print the result
             if (res != null) {
                 while (res.next()) {
-                    System.out.println("county: " + res.getString("county"));
+                    System.out.println("common name: " + res.getString("common_name"));
                 }
             }
 

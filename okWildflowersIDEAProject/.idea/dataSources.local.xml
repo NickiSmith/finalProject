@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="okwildflowerstest@localhost" uuid="b3661307-a382-497d-aeeb-efc13df7b046">
+    <data-source name="okwildflowers@localhost" uuid="9d841227-0ceb-4f4c-8ca0-faf3d85dc960">
       <database-info product="PostgreSQL" version="12.1" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="12.1" exact-driver-version="42.2">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
