@@ -43,16 +43,90 @@
         <!-- Create Report Tab Panel -->
         <div class="tab-pane active" id="create_observation">
           <form id = "create_observation_form">
-            <div><label>County:&nbsp</label><input placeholder="County" name="county"></div>
-<%--            <div><label>Genus:&nbsp</label><input placeholder="genus" name="genus"></div>--%>
-            <div><label>Scientific_name&nbsp</label><input placeholder="Scientific_name" name="scientific_name"></div>
-            <div><label>State:&nbsp</label><input placeholder="State" name="state"></div>
-            <div><label>Report Type:</label>
-              <select name="report_type">
-                <option value="">Choose the report type</option>
-                <option value="test">test</option>
-                <option value="test2">test2</option>
-                <option value="test3">test3</option>
+            <div><label>Genus:&nbsp</label><input placeholder="genus" name="genus"></div>
+              <div><label>Common name:&nbsp</label><input placeholder="Common name" name="common_name"></div>
+            <div><label>Scientific name&nbsp</label><input placeholder="Scientific name" name="scientific_name"></div>
+            <div><label>Recorded by:&nbsp</label><input placeholder="Your name" name="recorded_by"></div>
+            <div><label>County:</label>
+              <select name="county">
+                <option value="">Choose the county</option>
+                  <option value='Adair'>Adair</option>
+                  <option value='Alfalfa'>Alfalfa</option>
+                  <option value='Atoka'>Atoka</option>
+                  <option value='Beaver'>Beaver</option>
+                  <option value='Beckham'>Beckham</option>
+                  <option value='Blaine'>Blaine</option>
+                  <option value='Bryan'>Bryan</option>
+                  <option value='Caddo'>Caddo</option>
+                  <option value='Canadian'>Canadian</option>
+                  <option value='Carter'>Carter</option>
+                  <option value='Cherokee'>Cherokee</option>
+                  <option value='Choctaw'>Choctaw</option>
+                  <option value='Cimarron'>Cimarron</option>
+                  <option value='Cleveland'>Cleveland</option>
+                  <option value='Coal'>Coal</option>
+                  <option value='Comanche'>Comanche</option>
+                  <option value='Cotton'>Cotton</option>
+                  <option value='Craig'>Craig</option>
+                  <option value='Creek'>Creek</option>
+                  <option value='Custer'>Custer</option>
+                  <option value='Delaware'>Delaware</option>
+                  <option value='Dewey'>Dewey</option>
+                  <option value='Ellis'>Ellis</option>
+                  <option value='Garfield'>Garfield</option>
+                  <option value='Garvin'>Garvin</option>
+                  <option value='Grady'>Grady</option>
+                  <option value='Grant'>Grant</option>
+                  <option value='Greer'>Greer</option>
+                  <option value='Harmon'>Harmon</option>
+                  <option value='Harper'>Harper</option>
+                  <option value='Haskell'>Haskell</option>
+                  <option value='Hughes'>Hughes</option>
+                  <option value='Jackson'>Jackson</option>
+                  <option value='Jefferson'>Jefferson</option>
+                  <option value='Johnston'>Johnston</option>
+                  <option value='Kay'>Kay</option>
+                  <option value='Kingfisher'>Kingfisher</option>
+                  <option value='Kiowa'>Kiowa</option>
+                  <option value='Latimer'>Latimer</option>
+                  <option value='Le Flore'>Le Flore</option>
+                  <option value='Lincoln'>Lincoln</option>
+                  <option value='Logan'>Logan</option>
+                  <option value='Love'>Love</option>
+                  <option value='McClain'>McClain</option>
+                  <option value='McCurtain'>McCurtain</option>
+                  <option value='McIntosh'>McIntosh</option>
+                  <option value='Major'>Major</option>
+                  <option value='Marshall'>Marshall</option>
+                  <option value='Mayes'>Mayes</option>
+                  <option value='Murray'>Murray</option>
+                  <option value='Muskogee'>Muskogee</option>
+                  <option value='Noble'>Noble</option>
+                  <option value='Nowata'>Nowata</option>
+                  <option value='Okfuskee'>Okfuskee</option>
+                  <option value='Oklahoma'>Oklahoma</option>
+                  <option value='Okmulgee'>Okmulgee</option>
+                  <option value='Osage'>Osage</option>
+                  <option value='Ottawa'>Ottawa</option>
+                  <option value='Pawnee'>Pawnee</option>
+                  <option value='Payne'>Payne</option>
+                  <option value='Pittsburg'>Pittsburg</option>
+                  <option value='Pontotoc'>Pontotoc</option>
+                  <option value='Pottawatomie'>Pottawatomie</option>
+                  <option value='Pushmataha'>Pushmataha</option>
+                  <option value='Roger Mills'>Roger Mills</option>
+                  <option value='Rogers'>Rogers</option>
+                  <option value='Seminole'>Seminole</option>
+                  <option value='Sequoyah'>Sequoyah</option>
+                  <option value='Stephens'>Stephens</option>
+                  <option value='Texas'>Texas</option>
+                  <option value='Tillman'>Tillman</option>
+                  <option value='Tulsa'>Tulsa</option>
+                  <option value='Wagoner'>Wagoner</option>
+                  <option value='Washington'>Washington</option>
+                  <option value='Washita'>Washita</option>
+                  <option value='Woods'>Woods</option>
+                  <option value='Woodward'>Woodward</option>
               </select>
             </div>
             <div><label>Address:</label>
@@ -219,7 +293,7 @@
         </select>
     </div>
     <div><label>Biome:</label>
-        <select name="genus">
+        <select name="biome">
             <option value="">Choose the biome region</option>
             <option value="1">1</option>
             <option value="2">2</option>

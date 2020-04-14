@@ -43,13 +43,23 @@ console.log("inside mapInitialization")
         bounds.extend(latlng);
 
         // Create the infoWindow content (simplified to just county)
-        var common = e['common_name']
-        var commonR = common.replace('_', '\'')
+        var common = e['common_name'];
+        // var commonR;
+        // if (common != null){
+        //     commonR = common.replace('_', '\'');
+        //     return commonR;
+        // }
+        // else {
+        //     commonR = common;
+        //     return commonR;
+        // }
+
         var contentStr = '<h4>Observation Details</h4><hr>';
-        contentStr += '<p><b>' + 'Common name' + ':</b>&nbsp' + commonR + '</p>';
+        contentStr += '<p><b>' + 'Common name' + ':</b>&nbsp' + common + '</p>';
         contentStr += '<p><b>' + 'Scientific name' + ':</b>&nbsp' + e['scientific_name'] + '</p>';
         contentStr += '<p><b>' + 'County' + ':</b>&nbsp' + e['county'] + '</p>';
         contentStr += '<p><b>' + 'Biome' + ':</b>&nbsp' + e['biome'] + '</p>';
+        contentStr += '<p><b>' + 'Habitat description' + ':</b>&nbsp' + e['habitat'] + '</p>';
         contentStr += '<p><b>' + 'Recorded by' + ':</b>&nbsp' + e['recorded_by'] + '</p>';
         contentStr += '<p><b>' + 'Date' + ':</b>&nbsp' + e['date'] + '</p>';
 
