@@ -63,12 +63,43 @@ console.log("inside mapInitialization")
         contentStr += '<p><b>' + 'Recorded by' + ':</b>&nbsp' + e['recorded_by'] + '</p>';
         contentStr += '<p><b>' + 'Date' + ':</b>&nbsp' + e['date'] + '</p>';
 
+
+        var icon;
+        if (e['genus'] == 'Achillea') {
+            icon = 'img/tickseed.png'
+        } else if (e['genus'] == 'Aphanostephus') {
+            icon = 'img/dogwood.png'
+        } else if (e['genus'] == 'Asclepias') {
+            icon = 'img/bluebonnet.png'
+        } else if (e['genus'] == 'Castilleja') {
+            icon = 'img/pricklypoppy.png'
+        } else if (e['genus'] == 'Coreopsis') {
+            icon = 'img/bachelorbutton.png'
+        } else if (e['genus'] == 'Echinacea') {
+            icon = 'img/indianpaintbrush.png'
+        } else if (e['genus'] == 'Gaillardia') {
+            icon = 'img/indianblanket.png'
+        } else if (e['genus'] == 'Phlox') {
+            icon = 'img/purplemallo.png'
+        } else if (e['genus'] == 'Rudbeckia') {
+            icon = 'img/canola.png'
+        } else if (e['genus'] == 'Silene') {
+            icon = 'img/prairieanemone.png'
+        } else if (e['genus'] == 'Trifolium') {
+            icon = 'img/yellowladyslipper.png'
+        } else if (e['genus'] == 'Trillium') {
+            icon = 'img/coneflower.png'
+        }
+
+
+
         var marker = new google.maps.Marker({ // Set the marker
             position : latlng, // Position marker to coordinates
             map : map, // assign the market to our map variable
             customInfo: contentStr,
-            icon: 'img/fire-station-15.svg'
+            icon: icon,
         });
+
 
         // Add a Click Listener to the marker (creates infowindow content using contentStr (customInfo)
         google.maps.event.addListener(marker, 'click', function() {
