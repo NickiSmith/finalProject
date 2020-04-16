@@ -66,29 +66,29 @@ console.log("inside mapInitialization")
 
         var icon;
         if (e['genus'] == 'Achillea') {
-            icon = 'img/tickseed.png'
+            icon = 'img/tickseed.svg'
         } else if (e['genus'] == 'Aphanostephus') {
-            icon = 'img/dogwood.png'
+            icon = 'img/dogwood.svg'
         } else if (e['genus'] == 'Asclepias') {
-            icon = 'img/bluebonnet.png'
+            icon = 'img/bluebonnet.svg'
         } else if (e['genus'] == 'Castilleja') {
-            icon = 'img/pricklypoppy.png'
+            icon = 'img/pricklypoppy.svg'
         } else if (e['genus'] == 'Coreopsis') {
-            icon = 'img/bachelorbutton.png'
+            icon = 'img/bachelorbutton.svg'
         } else if (e['genus'] == 'Echinacea') {
-            icon = 'img/indianpaintbrush.png'
+            icon = 'img/indianpaintbrush.svg'
         } else if (e['genus'] == 'Gaillardia') {
-            icon = 'img/indianblanket.png'
+            icon = 'img/indianblanket.svg'
         } else if (e['genus'] == 'Phlox') {
-            icon = 'img/purplemallo.png'
+            icon = 'img/purplemallo.svg'
         } else if (e['genus'] == 'Rudbeckia') {
-            icon = 'img/canola.png'
+            icon = 'img/canola.svg'
         } else if (e['genus'] == 'Silene') {
-            icon = 'img/prairieanemone.png'
+            icon = 'img/prairieanemone.svg'
         } else if (e['genus'] == 'Trifolium') {
-            icon = 'img/yellowladyslipper.png'
+            icon = 'img/yellowladyslipper.svg'
         } else if (e['genus'] == 'Trillium') {
-            icon = 'img/coneflower.png'
+            icon = 'img/coneflower.svg'
         }
 
 

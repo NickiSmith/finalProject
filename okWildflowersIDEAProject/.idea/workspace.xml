@@ -8,6 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bde491a7-def9-4ea2-a625-11f8a78a36e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/js/loadmapOK.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/loadmapOK.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,12 +200,7 @@
         <serviceView>
           <option name="contentProportion" value="0.13592896" />
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -228,7 +225,7 @@
       <workItem from="1586204259230" duration="6202000" />
       <workItem from="1586623782303" duration="22416000" />
       <workItem from="1586800057314" duration="4335000" />
-      <workItem from="1586891385908" duration="2552000" />
+      <workItem from="1586891385908" duration="3363000" />
     </task>
     <servers />
   </component>
