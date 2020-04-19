@@ -84,17 +84,25 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
         String lon = request.getParameter("longitude");
         String lat = request.getParameter("latitude");
         String scientific_name = request.getParameter("scientific_name");
-//        String biome = request.getParameter("biome");
-//        String date = request.getParameter("date");
+        String biome = request.getParameter("biome");
+        String date = request.getParameter("date");
         String common_name = request.getParameter("common_name");
+        String habitat = request.getParameter("habitat");
+        String recorded_by = request.getParameter("recorded_by");
+
         if (county != null) {county = "'" + county + "'";}
         if (genus != null) {genus = "'" + genus + "'";}
         if (scientific_name != null) {scientific_name = "'" + scientific_name + "'";}
         if (common_name != null) {common_name = "'" + common_name + "'";}
+        if (habitat != null) {habitat = "'" + habitat + "'";}
+        if (recorded_by != null) {recorded_by = "'" + recorded_by + "'";}
+        if (date != null) {date = "'" + date + "'";}
+//        if (biome != null) {biome = "'" + biome + "'";}
 
-        sql = "insert into wildflowers (county, genus, scientific_name, common_name, geom)" +
+        sql = "insert into wildflowers (county, genus, scientific_name, common_name, habitat, recorded_by, date, biome, geom)" +
                 " values (" + county + "," + genus + "," + scientific_name
-                + "," + common_name + ", ST_GeomFromText('POINT(" + lon + " " + lat + ")', 4326))";
+                + "," + common_name + "," + habitat + "," + recorded_by + "," + date + "," + biome +
+                ", ST_GeomFromText('POINT(" + lon + " " + lat + ")', 4326))";
         dbutil.modifyDB(sql);
 
         // record report_id
@@ -119,97 +127,249 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
             response) throws JSONException, SQLException, IOException {
         //create an empty JSON array to pass into the query helper
         JSONArray list = new JSONArray();
-
+        String sql = "select id, habitat, common_name, biome, recorded_by, county, date, " +
+                "scientific_name, ST_X(geom) as " +
+                "longitude, ST_Y(geom) as latitude from wildflowers";
         String genusParam = request.getParameter("genus");
         String commonParam = request.getParameter("common");
         String countyParam = request.getParameter("county");
         String biomeParam = request.getParameter("biome");
+        String startDate = request.getParameter("start_date");
+        String endDate = request.getParameter("end_date");
 
-        if (genusParam == null && commonParam == null && countyParam == null && biomeParam == null) {
-            String sql = "select id, habitat, common_name, biome, recorded_by, county, date, " +
-                    "scientific_name, ST_X(geom) as " +
-                    "longitude, ST_Y(geom) as latitude from wildflowers";
-            queryObservationHelper(sql,list);
-        }
-
-        if (genusParam != null && commonParam == null && countyParam ==null && biomeParam == null) {
-            String sql = "select id, habitat, common_name, biome, recorded_by, county, date, " +
-                    "scientific_name, ST_X(geom) as " +
-                    "longitude, ST_Y(geom) as latitude from wildflowers where genus = " + "'" + genusParam + "'";
-            queryObservationHelper(sql,list);
-        }
-
-        if (genusParam != null && commonParam != null && countyParam == null && biomeParam == null) {
-            String sql = "select id, habitat, common_name, biome, recorded_by, county, date, " +
-                    "scientific_name, ST_X(geom) as " +
-                    "longitude, ST_Y(geom) as latitude from wildflowers where genus = "
-                    + "'" + genusParam + "' and common_name = '" + commonParam + "'";
-            queryObservationHelper(sql,list);
-        }
-
-        if (genusParam != null && commonParam != null && countyParam != null && biomeParam == null) {
-            String sql = "select id, habitat, common_name, biome, recorded_by, county, date, " +
-                    "scientific_name, ST_X(geom) as " +
-                    "longitude, ST_Y(geom) as latitude from wildflowers where common_name = " + "'" + commonParam + "' " +
-                    "and county = '" + countyParam + "' and genus =" + "'" + genusParam + "'";
-            queryObservationHelper(sql,list);
-        }
-
-        if (genusParam == null && commonParam == null && countyParam != null && biomeParam == null) {
-            String sql = "select id, habitat, common_name, biome, recorded_by, county, date, " +
-                    "scientific_name, ST_X(geom) as " +
-                    "longitude, ST_Y(geom) as latitude from wildflowers where county = " + "'" + countyParam + "'";
-            queryObservationHelper(sql,list);
-        }
-        if (genusParam == null && commonParam != null && countyParam == null && biomeParam == null) {
-            String sql = "select id, habitat, common_name, biome, recorded_by, county, date, " +
-                    "scientific_name, ST_X(geom) as " +
-                    "longitude, ST_Y(geom) as latitude from wildflowers where common_name = " + "'" + commonParam + "'";
-            queryObservationHelper(sql,list);
-        }
-        if (genusParam == null && commonParam != null && countyParam != null && biomeParam == null) {
-            String sql = "select id, habitat, common_name, biome, recorded_by, county, date, " +
-                    "scientific_name, ST_X(geom) as " +
-                    "longitude, ST_Y(geom) as latitude from wildflowers where common_name = " + "'" + commonParam + "'" +
-                    "and county = '" + countyParam + "'";
-            queryObservationHelper(sql,list);
-        }
-        //add biomeParam
-        if (genusParam == null && commonParam == null && countyParam ==null && biomeParam != null) {
-            String sql = "select id, habitat, common_name, biome, recorded_by, county, date, " +
-                    "scientific_name, ST_X(geom) as " +
-                    "longitude, ST_Y(geom) as latitude from wildflowers where biome = " + "'" + biomeParam + "'";
-            queryObservationHelper(sql,list);
+        if (startDate == null && endDate == null) {
+            if (genusParam == null && commonParam == null && countyParam == null && biomeParam == null) {
+            }
+            if (genusParam != null && commonParam == null && countyParam == null && biomeParam == null) {
+                sql += " where genus = " + "'" + genusParam + "'";
+            }
+            if (genusParam != null && commonParam != null && countyParam == null && biomeParam == null) {
+                sql += " where genus = "
+                        + "'" + genusParam + "' and common_name = '" + commonParam + "'";
+            }
+            if (genusParam != null && commonParam != null && countyParam != null && biomeParam == null) {
+                sql += " where common_name = " + "'" + commonParam + "' " +
+                        "and county = '" + countyParam + "' and genus =" + "'" + genusParam + "'";
+            }
+            if (genusParam != null && commonParam != null && countyParam != null && biomeParam != null) {
+                sql += " where common_name = " + "'" + commonParam + "' " +
+                        "and county = '" + countyParam + "' and genus =" + "'" + genusParam + "' and biome =" + "'" + biomeParam + "'";
+            }
+            if (genusParam != null && commonParam == null && countyParam == null && biomeParam != null) {
+                sql += " where genus = "
+                        + "'" + genusParam + "' and biome = '" + biomeParam + "'";
+            }
+            if (genusParam != null && commonParam != null && countyParam == null && biomeParam != null) {
+                sql += " where genus = "
+                        + "'" + genusParam + "' and common_name = '" + commonParam + "' and biome = '" + biomeParam + "'";
+            }
+            if (genusParam != null && commonParam == null && countyParam != null && biomeParam != null) {
+                sql += " where genus = "
+                        + "'" + genusParam + "' and county = '" + countyParam + "' and biome = '" + biomeParam + "'";
+            }
+            if (genusParam == null && commonParam == null && countyParam != null && biomeParam == null) {
+                sql += " where county = " + "'" + countyParam + "'";
+            }
+            if (genusParam == null && commonParam != null && countyParam == null && biomeParam == null) {
+                sql += " where common_name = " + "'" + commonParam + "'";
+            }
+            if (genusParam == null && commonParam != null && countyParam != null && biomeParam == null) {
+                sql += " where common_name = " + "'" + commonParam + "'" +
+                        "and county = '" + countyParam + "'";
+            }
+            if (genusParam == null && commonParam == null && countyParam == null && biomeParam != null) {
+                sql += " where biome = " + "'" + biomeParam + "'";
+            }
+            if (genusParam == null && commonParam != null && countyParam == null && biomeParam != null) {
+                sql += " where common_name = " + "'"
+                        + commonParam + "' and biome = '" + biomeParam + "'";
+            }
+            if (genusParam == null && commonParam == null && countyParam != null && biomeParam != null) {
+                sql += " where county = " + "'"
+                        + countyParam + "' and biome = '" + biomeParam + "'";
+            }
         }
 
-        if (genusParam != null && commonParam == null && countyParam == null && biomeParam != null) {
-            String sql = "select id, habitat, common_name, biome, recorded_by, county, date, " +
-                    "scientific_name, ST_X(geom) as " +
-                    "longitude, ST_Y(geom) as latitude from wildflowers where genus = "
-                    + "'" + genusParam + "' and biome = '" + biomeParam + "'";
-            queryObservationHelper(sql,list);
+        else if (startDate != null && endDate != null){
+
+            if (genusParam == null && commonParam == null && countyParam == null && biomeParam == null) {
+                sql += " where date between " + "'" + startDate + "' and " + "'" + endDate + "'";
+            }
+            if (genusParam != null && commonParam == null && countyParam == null && biomeParam == null) {
+                sql += " where genus = " + "'" + genusParam + "'and date between " + "'" + startDate + "' and " + "'" + endDate + "'";
+            }
+            if (genusParam != null && commonParam != null && countyParam == null && biomeParam == null) {
+                sql += " where genus = "
+                        + "'" + genusParam + "' and common_name = '" + commonParam + "' and date between " + "'" + startDate + "' and " + "'" + endDate + "'";
+            }
+            if (genusParam != null && commonParam != null && countyParam != null && biomeParam == null) {
+                sql += " where common_name = " + "'" + commonParam + "' " +
+                        "and county = '" + countyParam + "' and genus =" + "'" + genusParam + "' and date between " + "'" + startDate + "' and " + "'" + endDate + "'";
+            }
+            if (genusParam != null && commonParam != null && countyParam != null && biomeParam != null) {
+                sql += " where common_name = " + "'" + commonParam + "' " +
+                        "and county = '" + countyParam + "' and genus =" + "'" + genusParam + "' and biome =" + "'" + biomeParam + "'" +
+                        " and date between " + "'" + startDate + "' and " + "'" + endDate + "'";
+            }
+            if (genusParam != null && commonParam == null && countyParam != null && biomeParam != null) {
+                sql += " where genus = "
+                        + "'" + genusParam + "' and county = '" + countyParam + "' and biome = '" + biomeParam + "'" +
+                        " and date between " + "'" + startDate + "' and " + "'" + endDate + "'";
+            }
+            if (genusParam == null && commonParam == null && countyParam != null && biomeParam == null) {
+                sql += " where county = " + "'" + countyParam + "' and date between " + "'" + startDate + "' and " + "'" + endDate + "'";
+            }
+            if (genusParam == null && commonParam != null && countyParam == null && biomeParam == null) {
+                sql += " where common_name = " + "'" + commonParam + "' and date between " + "'" + startDate + "' and " + "'" + endDate + "'";
+            }
+            if (genusParam == null && commonParam != null && countyParam != null && biomeParam == null) {
+                sql += " where common_name = " + "'" + commonParam + "'" +
+                        "and county = '" + countyParam + "' and date between " + "'" + startDate + "' and " + "'" + endDate + "'";
+            }
+            if (genusParam == null && commonParam == null && countyParam == null && biomeParam != null) {
+                sql += " where biome = " + "'" + biomeParam + "' and date between " + "'" + startDate + "' and " + "'" + endDate + "'";
+            }
+            if (genusParam != null && commonParam == null && countyParam == null && biomeParam != null) {
+                sql += " where genus = "
+                        + "'" + genusParam + "' and biome = '" + biomeParam + "' and date between " + "'" + startDate + "' and " + "'" + endDate + "'";
+            }
+            if (genusParam != null && commonParam != null && countyParam == null && biomeParam != null) {
+                sql += " where genus = "
+                        + "'" + genusParam + "' and common_name = '" + commonParam + "' and biome = '" + biomeParam + "' and date between "
+                        + "'" + startDate + "' and " + "'" + endDate + "'";
+            }
+            if (genusParam == null && commonParam != null && countyParam == null && biomeParam != null) {
+                sql += " where common_name = " + "'"
+                        + commonParam + "' and biome = '" + biomeParam + "' and date between " + "'" + startDate + "' and " + "'" + endDate + "'";
+            }
+            if (genusParam == null && commonParam == null && countyParam != null && biomeParam != null) {
+                sql += " where county = " + "'"
+                        + countyParam + "' and biome = '" + biomeParam + "' and date between " + "'" + startDate + "' and " + "'" + endDate + "'";
+            }
         }
 
-        if (genusParam != null && commonParam != null && countyParam == null && biomeParam != null) {
-            String sql = "select id, habitat, common_name, biome, recorded_by, county, date, " +
-                    "scientific_name, ST_X(geom) as " +
-                    "longitude, ST_Y(geom) as latitude from wildflowers where genus = "
-                    + "'" + genusParam + "' and common_name = '" + commonParam + "' and biome = '" + biomeParam + "'";
-            queryObservationHelper(sql,list);
+        else if (startDate != null && endDate == null){
+
+            if (genusParam == null && commonParam == null && countyParam == null && biomeParam == null) {
+                sql += " where date >= " + "'" + startDate + "'";
+            }
+            if (genusParam != null && commonParam == null && countyParam == null && biomeParam == null) {
+                sql += " where genus = " + "'" + genusParam + "'and date >= " + "'" + startDate + "'";
+            }
+            if (genusParam != null && commonParam != null && countyParam == null && biomeParam == null) {
+                sql += " where genus = "
+                        + "'" + genusParam + "' and common_name = '" + commonParam + "' and date >= " + "'" + startDate + "'";
+            }
+            if (genusParam != null && commonParam != null && countyParam != null && biomeParam == null) {
+                sql += " where common_name = " + "'" + commonParam + "' " +
+                        "and county = '" + countyParam + "' and genus =" + "'" + genusParam + "' and date >= " + "'" + startDate + "'";
+            }
+            if (genusParam != null && commonParam != null && countyParam != null && biomeParam != null) {
+                sql += " where common_name = " + "'" + commonParam + "' " +
+                        "and county = '" + countyParam + "' and genus =" + "'" + genusParam + "' and biome =" + "'" + biomeParam + "'" +
+                        " and date >= " + "'" + startDate + "'";
+            }
+            if (genusParam != null && commonParam == null && countyParam != null && biomeParam != null) {
+                sql += " where genus = "
+                        + "'" + genusParam + "' and county = '" + countyParam + "' and biome = '" + biomeParam + "'" +
+                        " and date >= " + "'" + startDate + "'";;
+            }
+            if (genusParam == null && commonParam == null && countyParam != null && biomeParam == null) {
+                sql += " where county = " + "'" + countyParam + "' and date >= " + "'" + startDate + "'";
+            }
+            if (genusParam == null && commonParam != null && countyParam == null && biomeParam == null) {
+                sql += " where common_name = " + "'" + commonParam + "' and date >= " + "'" + startDate + "' and " + "'" + endDate + "'";
+            }
+            if (genusParam == null && commonParam != null && countyParam != null && biomeParam == null) {
+                sql += " where common_name = " + "'" + commonParam + "'" +
+                        "and county = '" + countyParam + "' and date >= " + "'" + startDate + "'";
+            }
+            if (genusParam == null && commonParam == null && countyParam == null && biomeParam != null) {
+                sql += " where biome = " + "'" + biomeParam + "' and date >= " + "'" + startDate + "'";
+            }
+            if (genusParam != null && commonParam == null && countyParam == null && biomeParam != null) {
+                sql += " where genus = "
+                        + "'" + genusParam + "' and biome = '" + biomeParam + "' and date >= " + "'" + startDate + "'";
+            }
+            if (genusParam != null && commonParam != null && countyParam == null && biomeParam != null) {
+                sql += " where genus = "
+                        + "'" + genusParam + "' and common_name = '" + commonParam + "' and biome = '" + biomeParam + "' and date >= "
+                        + "'" + startDate + "'";
+            }
+            if (genusParam == null && commonParam != null && countyParam == null && biomeParam != null) {
+                sql += " where common_name = " + "'"
+                        + commonParam + "' and biome = '" + biomeParam + "' and date >= " + "'" + startDate + "'";
+            }
+            if (genusParam == null && commonParam == null && countyParam != null && biomeParam != null) {
+                sql += " where county = " + "'"
+                        + countyParam + "' and biome = '" + biomeParam + "' and date >= " + "'" + startDate + "'";
+            }
         }
 
-        if (genusParam == null && commonParam != null && countyParam == null && biomeParam != null) {
-            String sql = "select id, habitat, common_name, biome, recorded_by, county, date, " +
-                    "scientific_name, ST_X(geom) as " +
-                    "longitude, ST_Y(geom) as latitude from wildflowers where common_name = " + "'"
-                    + commonParam + "' and biome = '" + biomeParam + "'";
-            queryObservationHelper(sql,list);
+        else if (startDate == null && endDate != null){
+
+            if (genusParam == null && commonParam == null && countyParam == null && biomeParam == null) {
+                sql += " where date <= " + "'" + endDate + "'";
+            }
+            if (genusParam != null && commonParam == null && countyParam == null && biomeParam == null) {
+                sql += " where genus = " + "'" + genusParam + "'and date <= " + endDate + "'";
+            }
+            if (genusParam != null && commonParam != null && countyParam == null && biomeParam == null) {
+                sql += " where genus = "
+                        + "'" + genusParam + "' and common_name = '" + commonParam + "' and date <= " + "'" + endDate + "'";
+            }
+            if (genusParam != null && commonParam != null && countyParam != null && biomeParam == null) {
+                sql += " where common_name = " + "'" + commonParam + "' " +
+                        "and county = '" + countyParam + "' and genus =" + "'" + genusParam + "' and date <= " + "'" + endDate + "'";
+            }
+            if (genusParam != null && commonParam != null && countyParam != null && biomeParam != null) {
+                sql += " where common_name = " + "'" + commonParam + "' " +
+                        "and county = '" + countyParam + "' and genus =" + "'" + genusParam + "' and biome =" + "'" + biomeParam + "'" +
+                        " and date <= " + "'" +  endDate + "'";
+            }
+            if (genusParam != null && commonParam == null && countyParam != null && biomeParam != null) {
+                sql += " where genus = "
+                        + "'" + genusParam + "' and county = '" + countyParam + "' and biome = '" + biomeParam + "'" +
+                        " and date <= " + "'" + endDate + "'";
+            }
+            if (genusParam == null && commonParam == null && countyParam != null && biomeParam == null) {
+                sql += " where county = " + "'" + countyParam + "' and date <= " + "'" + endDate + "'";
+            }
+            if (genusParam == null && commonParam != null && countyParam == null && biomeParam == null) {
+                sql += " where common_name = " + "'" + commonParam + "' and date <= " + "'" + endDate + "'";
+            }
+            if (genusParam == null && commonParam != null && countyParam != null && biomeParam == null) {
+                sql += " where common_name = " + "'" + commonParam + "'" +
+                        "and county = '" + countyParam + "' and date <= " + "'" + endDate + "'";
+            }
+            if (genusParam == null && commonParam == null && countyParam == null && biomeParam != null) {
+                sql += " where biome = " + "'" + biomeParam + "' and date <= " + "'" + endDate + "'";
+            }
+            if (genusParam != null && commonParam == null && countyParam == null && biomeParam != null) {
+                sql += " where genus = "
+                        + "'" + genusParam + "' and biome = '" + biomeParam + "' and date <= " + "'" + endDate + "'";
+            }
+            if (genusParam != null && commonParam != null && countyParam == null && biomeParam != null) {
+                sql += " where genus = "
+                        + "'" + genusParam + "' and common_name = '" + commonParam + "' and biome = '" + biomeParam + "' and date <= "
+                        + "'" + endDate + "'";
+            }
+            if (genusParam == null && commonParam != null && countyParam == null && biomeParam != null) {
+                sql += " where common_name = " + "'"
+                        + commonParam + "' and biome = '" + biomeParam + "' and date <= " + "'" + endDate + "'";
+            }
+            if (genusParam == null && commonParam == null && countyParam != null && biomeParam != null) {
+                sql += " where county = " + "'"
+                        + countyParam + "' and biome = '" + biomeParam + "' and date <= " + "'" + endDate + "'";
+            }
         }
 
+        queryObservationHelper(sql, list);
         response.getWriter().write(list.toString());
     }
 
     private void queryObservationHelper(String sql, JSONArray list) throws SQLException {
+
         DBUtilityOK dbutil = new DBUtilityOK();
 
         ResultSet res = dbutil.queryDB(sql);

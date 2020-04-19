@@ -1,7 +1,7 @@
 
 function queryObservation(event) {
     event.preventDefault(); // stop form from submitting normally
-console.log(event);
+    console.log(event);
 
     var a = $("#query_observation_form").serializeArray();
     a.push({ name: "tab_id", value: "1" });
@@ -15,7 +15,6 @@ console.log(event);
         success: function(observations) {
             mapInitialization(observations);
             console.log(observations);
-            // alert("A query was submitted!");
         },
         error: function(xhr, status, error) {
             alert("Status: " + status + "\nError: " + error);
