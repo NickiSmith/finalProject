@@ -1,5 +1,5 @@
 html,body{
-    background-color: #FAB398;
+    background-color: #bcbcaa;
 }
 
 body {
@@ -7,11 +7,11 @@ body {
 }
 
 .container-fluid, .row{
-    background-color: #FF7F50;
+    background-color: #bcbcaa;
 }
 .sidebar {
     padding: 12px;
-    background-color: #FF7F50;
+    background-color: #bcbcaa;
 }
 
 form {

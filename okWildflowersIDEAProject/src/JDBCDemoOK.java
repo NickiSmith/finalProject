@@ -14,7 +14,7 @@ public class JDBCDemoOK {
 
             // establish connection
             String url = "jdbc:postgresql://localhost:5432/okwildflowers";
-            conn = DriverManager.getConnection(url, "postgres", "postgres");
+            conn = DriverManager.getConnection(url, "postgres", "admin");
 
             // query the database
             String sql = "select * from wildflowers where county='Osage'";

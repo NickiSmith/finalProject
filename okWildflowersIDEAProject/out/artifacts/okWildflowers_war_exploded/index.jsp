@@ -309,6 +309,7 @@
             </button>
           </form>
         </div>
+          <img src="img/okregions.png" height="300" width="400">;
       </div>
     </div>
 

@@ -24,7 +24,7 @@ function showAllObservations() {
 
 function mapInitialization(observations) {
     var mapOptions = {
-        mapTypeId : google.maps.MapTypeId.ROADMAP, // Set the type of Map
+        mapTypeId : google.maps.MapTypeId.TERRAIN, // Set the type of Map CHANGED FROM roadmap
     };
     console.log(observations);
 console.log("inside mapInitialization")
@@ -63,12 +63,43 @@ console.log("inside mapInitialization")
         contentStr += '<p><b>' + 'Recorded by' + ':</b>&nbsp' + e['recorded_by'] + '</p>';
         contentStr += '<p><b>' + 'Date' + ':</b>&nbsp' + e['date'] + '</p>';
 
+
+        var icon;
+        if (e['genus'] == 'Achillea') {
+            icon = 'img/tickseed.svg'
+        } else if (e['genus'] == 'Aphanostephus') {
+            icon = 'img/dogwood.svg'
+        } else if (e['genus'] == 'Asclepias') {
+            icon = 'img/bluebonnet.svg'
+        } else if (e['genus'] == 'Castilleja') {
+            icon = 'img/pricklypoppy.svg'
+        } else if (e['genus'] == 'Coreopsis') {
+            icon = 'img/bachelorbutton.svg'
+        } else if (e['genus'] == 'Echinacea') {
+            icon = 'img/indianpaintbrush.svg'
+        } else if (e['genus'] == 'Gaillardia') {
+            icon = 'img/indianblanket.svg'
+        } else if (e['genus'] == 'Phlox') {
+            icon = 'img/purplemallo.svg'
+        } else if (e['genus'] == 'Rudbeckia') {
+            icon = 'img/canola.svg'
+        } else if (e['genus'] == 'Silene') {
+            icon = 'img/prairieanemone.svg'
+        } else if (e['genus'] == 'Trifolium') {
+            icon = 'img/yellowladyslipper.svg'
+        } else if (e['genus'] == 'Trillium') {
+            icon = 'img/coneflower.svg'
+        }
+
+
+
         var marker = new google.maps.Marker({ // Set the marker
             position : latlng, // Position marker to coordinates
             map : map, // assign the market to our map variable
             customInfo: contentStr,
-            icon: 'img/fire-station-15.svg'
+            icon: icon,
         });
+
 
         // Add a Click Listener to the marker (creates infowindow content using contentStr (customInfo)
         google.maps.event.addListener(marker, 'click', function() {

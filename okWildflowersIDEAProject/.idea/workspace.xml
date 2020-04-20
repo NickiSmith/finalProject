@@ -7,9 +7,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bde491a7-def9-4ea2-a625-11f8a78a36e2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/okWildflowers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/okWildflowers.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/okWildflowers_war_exploded/WEB-INF/classes/JDBCDemoOK.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/okWildflowers_war_exploded/WEB-INF/classes/JDBCDemoOK.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/okWildflowers_war_exploded/WEB-INF/classes/org/wildflowers/servlet/DBUtilityOK.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/okWildflowers_war_exploded/WEB-INF/classes/org/wildflowers/servlet/DBUtilityOK.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/okWildflowers_war_exploded/WEB-INF/classes/org/wildflowers/servlet/HttpServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/okWildflowers_war_exploded/WEB-INF/classes/org/wildflowers/servlet/HttpServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/okWildflowers_war_exploded/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/okWildflowers_war_exploded/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/okWildflowers_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/okWildflowers_war_exploded/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/okWildflowers_war_exploded/js/loadmapOK.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/okWildflowers_war_exploded/js/loadmapOK.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/okWildflowers/JDBCDemoOK.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/okWildflowers/JDBCDemoOK.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/okWildflowers/org/wildflowers/servlet/DBUtilityOK.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/okWildflowers/org/wildflowers/servlet/DBUtilityOK.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/okWildflowers/org/wildflowers/servlet/HttpServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/okWildflowers/org/wildflowers/servlet/HttpServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JDBCDemoOK.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JDBCDemoOK.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/wildflowers/servlet/DBUtilityOK.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/wildflowers/servlet/DBUtilityOK.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/wildflowers/servlet/HttpServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/wildflowers/servlet/HttpServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/loadmapOK.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/loadmapOK.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../okWildflowers_full.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../okWildflowers_full.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../okwildflowers_backup.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../okwildflowers_backupTAR.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../okwildflowers_backupTAR.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,57 +45,7 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="okwildflowers@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="okwildflowers@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="okwildflowers@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="okwildflowers: database" type="162271b6:PgImplModel$Database" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="okwildflowers@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="okwildflowers: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="okwildflowers@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="okwildflowers: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="okwildflowers@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="okwildflowers: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="okwildflowers@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="okwildflowers: database" type="162271b6:PgImplModel$Database" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="public: schema" type="983ebcf7:PgImplModel$Schema" />
-        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="wildflowers: table" type="69fad909:PgImplModel$LocalTable" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -113,10 +81,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="jsx.switch.disabled" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/Lab3 Project" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
@@ -124,7 +92,7 @@
       <recent name="C:\Users\Nicki\OneDrive - UW-Madison\GEOG 576\Final Project\okWildflowersIDEAProject\web\img" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JDBCDemoOK">
+  <component name="RunManager" selected="Application.DBUtilityOK">
     <configuration name="DBUtilityOK" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.wildflowers.servlet.DBUtilityOK" />
       <module name="okWildflowers" />
@@ -148,7 +116,7 @@
     <configuration name="index.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/okWildflowers_war_exploded/index.jsp">
       <method v="2" />
     </configuration>
-    <configuration name="Tomcat 7.0.99" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.99" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Tomcat 7.0.99" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.100" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="okWildflowers:war exploded">
           <settings>
@@ -164,6 +132,39 @@
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="53472" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -186,10 +187,16 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.DBUtilityOK" />
+      <item itemvalue="Application.JDBCDemoOK" />
+      <item itemvalue="JavaScript Debug.index.jsp" />
+      <item itemvalue="Tomcat Server.Tomcat 7.0.99" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JDBCDemoOK" />
         <item itemvalue="Application.DBUtilityOK" />
+        <item itemvalue="Application.JDBCDemoOK" />
         <item itemvalue="JavaScript Debug.index.jsp" />
       </list>
     </recent_temporary>
@@ -200,7 +207,17 @@
         <serviceView>
           <option name="contentProportion" value="0.13592896" />
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -225,7 +242,9 @@
       <workItem from="1586204259230" duration="6202000" />
       <workItem from="1586623782303" duration="22416000" />
       <workItem from="1586800057314" duration="4335000" />
-      <workItem from="1586891385908" duration="5299000" />
+      <workItem from="1586891385908" duration="7845000" />
+      <workItem from="1587158576414" duration="1950000" />
+      <workItem from="1587160941772" duration="5427000" />
     </task>
     <servers />
   </component>
@@ -233,70 +252,84 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="639" y="178" key="#Project_Structure" timestamp="1586925808219">
+    <state x="639" y="178" key="#Project_Structure" timestamp="1587157235333">
       <screen x="0" y="0" width="2560" height="1384" />
     </state>
-    <state x="639" y="178" key="#Project_Structure/0.0.2560.1384@0.0.2560.1384" timestamp="1586925808219" />
-    <state x="361" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586714156215">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="639" y="178" key="#Project_Structure/0.0.2560.1384@0.0.2560.1384" timestamp="1587157235333" />
+    <state x="602" y="126" width="1169" height="831" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587157819096">
+      <screen x="0" y="0" width="2560" height="1384" />
     </state>
     <state x="361" y="75" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1586714156215" />
+    <state x="602" y="126" width="1169" height="831" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1384@0.0.2560.1384" timestamp="1587157819096" />
     <state x="499" y="195" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1585591791804">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="195" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1585591791804" />
-    <state x="549" y="171" key="FileChooserDialogImpl" timestamp="1586729397687">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="915" y="287" key="FileChooserDialogImpl" timestamp="1587158869951">
+      <screen x="0" y="0" width="2560" height="1384" />
     </state>
     <state x="549" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586729397687" />
-    <state width="1264" height="273" key="GridCell.Tab.0.bottom" timestamp="1586865425849">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="915" y="287" key="FileChooserDialogImpl/0.0.2560.1384@0.0.2560.1384" timestamp="1587158869951" />
+    <state width="2114" height="207" key="GridCell.Tab.0.bottom" timestamp="1587343790081">
+      <screen x="0" y="0" width="2560" height="1384" />
     </state>
     <state width="1264" height="273" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586865425849" />
-    <state width="1264" height="273" key="GridCell.Tab.0.center" timestamp="1586865425849">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2114" height="207" key="GridCell.Tab.0.bottom/0.0.2560.1384@0.0.2560.1384" timestamp="1587343790081" />
+    <state width="2114" height="207" key="GridCell.Tab.0.center" timestamp="1587343790080">
+      <screen x="0" y="0" width="2560" height="1384" />
     </state>
     <state width="1264" height="273" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586865425849" />
-    <state width="1264" height="273" key="GridCell.Tab.0.left" timestamp="1586865425849">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2114" height="207" key="GridCell.Tab.0.center/0.0.2560.1384@0.0.2560.1384" timestamp="1587343790080" />
+    <state width="2114" height="207" key="GridCell.Tab.0.left" timestamp="1587343790080">
+      <screen x="0" y="0" width="2560" height="1384" />
     </state>
     <state width="1264" height="273" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586865425849" />
-    <state width="1264" height="273" key="GridCell.Tab.0.right" timestamp="1586865425849">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2114" height="207" key="GridCell.Tab.0.left/0.0.2560.1384@0.0.2560.1384" timestamp="1587343790080" />
+    <state width="2114" height="207" key="GridCell.Tab.0.right" timestamp="1587343790080">
+      <screen x="0" y="0" width="2560" height="1384" />
     </state>
     <state width="1264" height="273" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586865425849" />
-    <state width="1264" height="273" key="GridCell.Tab.1.bottom" timestamp="1586865425757">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2114" height="207" key="GridCell.Tab.0.right/0.0.2560.1384@0.0.2560.1384" timestamp="1587343790080" />
+    <state width="2114" height="207" key="GridCell.Tab.1.bottom" timestamp="1587343789974">
+      <screen x="0" y="0" width="2560" height="1384" />
     </state>
     <state width="1264" height="273" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586865425757" />
-    <state width="1264" height="273" key="GridCell.Tab.1.center" timestamp="1586865425756">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2114" height="207" key="GridCell.Tab.1.bottom/0.0.2560.1384@0.0.2560.1384" timestamp="1587343789974" />
+    <state width="2114" height="207" key="GridCell.Tab.1.center" timestamp="1587343789974">
+      <screen x="0" y="0" width="2560" height="1384" />
     </state>
     <state width="1264" height="273" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586865425756" />
-    <state width="1264" height="273" key="GridCell.Tab.1.left" timestamp="1586865425756">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2114" height="207" key="GridCell.Tab.1.center/0.0.2560.1384@0.0.2560.1384" timestamp="1587343789974" />
+    <state width="2114" height="207" key="GridCell.Tab.1.left" timestamp="1587343789974">
+      <screen x="0" y="0" width="2560" height="1384" />
     </state>
     <state width="1264" height="273" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586865425756" />
-    <state width="1264" height="273" key="GridCell.Tab.1.right" timestamp="1586865425757">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2114" height="207" key="GridCell.Tab.1.left/0.0.2560.1384@0.0.2560.1384" timestamp="1587343789974" />
+    <state width="2114" height="207" key="GridCell.Tab.1.right" timestamp="1587343789974">
+      <screen x="0" y="0" width="2560" height="1384" />
     </state>
     <state width="1264" height="273" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586865425757" />
-    <state width="1264" height="273" key="GridCell.Tab.2.bottom" timestamp="1586865425757">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2114" height="207" key="GridCell.Tab.1.right/0.0.2560.1384@0.0.2560.1384" timestamp="1587343789974" />
+    <state width="2114" height="207" key="GridCell.Tab.2.bottom" timestamp="1587343789974">
+      <screen x="0" y="0" width="2560" height="1384" />
     </state>
     <state width="1264" height="273" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586865425757" />
-    <state width="1264" height="273" key="GridCell.Tab.2.center" timestamp="1586865425757">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2114" height="207" key="GridCell.Tab.2.bottom/0.0.2560.1384@0.0.2560.1384" timestamp="1587343789974" />
+    <state width="2114" height="207" key="GridCell.Tab.2.center" timestamp="1587343789974">
+      <screen x="0" y="0" width="2560" height="1384" />
     </state>
     <state width="1264" height="273" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1586865425757" />
-    <state width="1264" height="273" key="GridCell.Tab.2.left" timestamp="1586865425757">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2114" height="207" key="GridCell.Tab.2.center/0.0.2560.1384@0.0.2560.1384" timestamp="1587343789974" />
+    <state width="2114" height="207" key="GridCell.Tab.2.left" timestamp="1587343789974">
+      <screen x="0" y="0" width="2560" height="1384" />
     </state>
     <state width="1264" height="273" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1586865425757" />
-    <state width="1264" height="273" key="GridCell.Tab.2.right" timestamp="1586865425757">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="2114" height="207" key="GridCell.Tab.2.left/0.0.2560.1384@0.0.2560.1384" timestamp="1587343789974" />
+    <state width="2114" height="207" key="GridCell.Tab.2.right" timestamp="1587343789974">
+      <screen x="0" y="0" width="2560" height="1384" />
     </state>
     <state width="1264" height="273" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1586865425757" />
+    <state width="2114" height="207" key="GridCell.Tab.2.right/0.0.2560.1384@0.0.2560.1384" timestamp="1587343789974" />
     <state width="222" height="457" key="HiddenNamespacesPopup" timestamp="1586801555644">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -305,9 +338,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1585587476211" />
-    <state x="793" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1586891388115">
+    <state x="793" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1587158579313">
       <screen x="0" y="0" width="2560" height="1384" />
     </state>
-    <state x="793" y="349" key="com.intellij.ide.util.TipDialog/0.0.2560.1384@0.0.2560.1384" timestamp="1586891388115" />
+    <state x="793" y="349" key="com.intellij.ide.util.TipDialog/0.0.2560.1384@0.0.2560.1384" timestamp="1587158579313" />
   </component>
 </project>

@@ -308,8 +308,8 @@
               <span class="glyphicon glyphicon-star"></span> Submit the query
             </button>
           </form>
-            <img src=?img/okregions2.png?>;
         </div>
+          <img src="img/okregions.png" height="300" width="400">;
       </div>
     </div>
 

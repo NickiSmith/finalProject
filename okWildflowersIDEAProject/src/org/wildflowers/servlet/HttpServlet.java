@@ -15,6 +15,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.wildflowers.servlet.DBUtilityOK;
 
+// JAVA_HOME
+
 /**
  * Servlet implementation class HttpServlet
  */
