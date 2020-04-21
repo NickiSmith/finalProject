@@ -62,11 +62,82 @@ function mapInitialization(observations) {
         contentStr += '<p><b>' + 'Recorded by' + ':</b>&nbsp' + e['recorded_by'] + '</p>';
         contentStr += '<p><b>' + 'Date' + ':</b>&nbsp' + e['date'] + '</p>';
 
+        //add custom icons for each genus
+        var icon;
+        var genus = e['genus'];
+
+        //consider making this switch statement instead of if?
+        if (genus == 'Achillea') {
+            icon = {
+                url: 'img/tickseed.svg',
+                scaledSize: new google.maps.Size(30, 30),}
+        } else if (genus == 'Aphanostephus') {
+            icon = {
+                url: 'img/dogwood.svg',
+                scaledSize: new google.maps.Size(30, 30), // scaled size
+            }
+        } else if (genus == 'Asclepias') {
+            icon = {
+                url: 'img/bluebonnet.svg',
+                scaledSize: new google.maps.Size(30, 30), // scaled size
+            }
+        } else if (genus == 'Castilleja') {
+            icon = {
+                url: 'img/pricklypoppy.svg',
+                scaledSize: new google.maps.Size(30, 30), // scaled size
+            }
+        } else if (genus == 'Coreopsis') {
+            icon = {
+                url: 'img/bachelorbutton.svg',
+                scaledSize: new google.maps.Size(30, 30), // scaled size
+            }
+        } else if (genus == 'Echinacea') {
+            icon = {
+                url: 'img/indianpaintbrush.svg',
+                scaledSize: new google.maps.Size(30, 30), // scaled size
+            }
+        } else if (genus == 'Gaillardia') {
+            icon = {
+                url: 'img/indianblanket.svg',
+                scaledSize: new google.maps.Size(30, 30), // scaled size
+            }
+        } else if (genus == 'Phlox') {
+            icon = {
+                url: 'img/purplemallo.svg',
+                scaledSize: new google.maps.Size(30, 30), // scaled size
+            }
+
+        } else if (genus == 'Rudbeckia') {
+            icon = {
+                url: 'img/canola.svg',
+                scaledSize: new google.maps.Size(30, 30), // scaled size
+            }
+
+        } else if (genus == 'Silene') {
+            icon = {
+                url: 'img/prairieanemone.svg',
+                scaledSize: new google.maps.Size(30, 30), // scaled size
+            }
+
+        } else if (genus == 'Trifolium') {
+            icon = {
+                url: 'img/yellowladyslipper.svg',
+                scaledSize: new google.maps.Size(30, 30), // scaled size
+            }
+
+        } else if (genus == 'Trillium') {
+            icon = {
+                url: 'img/coneflower.svg',
+                scaledSize: new google.maps.Size(30, 30), // scaled size
+            }
+
+        }
+
         var marker = new google.maps.Marker({ // Set the marker
             position : latlng, // Position marker to coordinates
             map : map, // assign the market to our map variable
             customInfo: contentStr,
-            icon: 'img/fire-station-15.svg'
+            icon: icon,
         });
 
         // Add a Click Listener to the marker (creates infowindow content using contentStr (customInfo)

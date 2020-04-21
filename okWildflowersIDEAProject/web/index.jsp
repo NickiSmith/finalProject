@@ -13,6 +13,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+  <!-- Bootstrap Date-Picker Plugin -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
   <!-- Google maps API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6Xpbv0WISWCAQWBY05c5ln8P6gPf1Bts&libraries=geometry,places">
   </script>
@@ -39,11 +43,12 @@
 
       <!-- Tab panes -->
       <div class="tab-content ">
-        <!-- Create Report Tab Panel -->
+        <!-- Create Observation Tab Panel -->
         <div class="tab-pane active" id="create_observation">
           <form id = "create_observation_form">
-            <div><label>Date of observation:&nbsp</label><input placeholder="Enter date (mm/dd/yyyy)" name="date"></div>
-            <div><label>Biome:&nbsp</label><select name="boime">
+            <div><label>Date of observation:&nbsp</label><input placeholder="MM/DD/YYYY" name="date" autocomplete="off"></div>
+
+            <div><label>Biome:&nbsp</label><select name="biome">
               <option value=''>Select a region</option>
               <option value='1'>Region 1</option>
               <option value='2'>Region 2</option>
@@ -149,7 +154,7 @@
           </form>
         </div>
 
-        <!-- Query Report Tab Panel: dropdowns are populated by main.js -->
+        <!-- Query Observation Tab Panel: dropdowns are populated by main.js -->
         <div class="tab-pane" id="query_observation">
           <form id = "query_observation_form">
 
@@ -314,11 +319,11 @@
                 </div>
             <div>
               <label>Start Date:</label>
-              <input placeholder="Enter start date (mm/dd/yyyy)" name="start_date">
+              <input placeholder="MM/DD/YYYY" name="start_date" autocomplete="off">
             </div>
             <div>
               <label>End Date:</label>
-              <input placeholder="Enter end date (mm/dd/yyyy)" name="end_date">
+              <input placeholder="MM/DD/YYYY" name="end_date" autocomplete="off">
             </div>
 
               <button type="submit" class="btn btn-default">
@@ -326,8 +331,12 @@
               </button>
 
             </form>
+
           </div>
         </div>
+      <div>
+        <img src="img/okregions.png" height="225" width="350">
+      </div>
       </div>
 
     <div id="map-canvas" class="col-xs-9"></div>

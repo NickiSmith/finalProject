@@ -33,7 +33,9 @@ function createObservation(event) {
     a.push({ name: "tab_id", value: "0" });
     a.push({name: "longitude", value: longitude});
     a.push({name: "latitude", value: latitude});
-    a = a.filter(function(item){return item.value != '';});
+    a = a.filter(function(item){
+        console.log(item);
+        return item.value != '';});
     $.ajax({
         url: 'HttpServlet',
         type: 'POST',
