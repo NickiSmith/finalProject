@@ -15,8 +15,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.wildflowers.servlet.DBUtilityOK;
 
-// JAVA_HOME
-
 /**
  * Servlet implementation class HttpServlet
  */
@@ -130,7 +128,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
         if (genusParam == null && commonParam == null && countyParam == null && biomeParam == null) {
             String sql = "select id, habitat, common_name, biome, recorded_by, county, date, " +
                     "scientific_name, ST_X(geom) as " +
-                    "longitude, ST_Y(geom) as latitude from okwildflowers";
+                    "longitude, ST_Y(geom) as latitude from wildflowers";
             queryObservationHelper(sql,list);
         }
 

@@ -17,7 +17,7 @@ public class JDBCDemoOK {
             conn = DriverManager.getConnection(url, "postgres", "admin");
 
             // query the database
-            String sql = "select * from wildflowers where county='Osage'";
+            String sql = "select * from wildflower where county='Osage'";
             stmt = conn.createStatement();
             ResultSet res = stmt.executeQuery(sql);
 

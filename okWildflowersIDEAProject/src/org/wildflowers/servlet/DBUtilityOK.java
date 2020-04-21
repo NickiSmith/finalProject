@@ -73,7 +73,7 @@ public class DBUtilityOK {
 //       util.modifyDB("insert into wildflowers (county, scientific_name) values ('ztest', 'ztest')");
 
         // 2. query the database
-        ResultSet res = util.queryDB("select * from wildflowers");
+        ResultSet res = util.queryDB("select * from okwildflowers");
         while (res.next()) {
             System.out.println(res.getString("common_name"));
         }
