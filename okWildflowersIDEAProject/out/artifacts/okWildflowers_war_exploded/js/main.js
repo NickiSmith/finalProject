@@ -83,7 +83,7 @@ window.onload = function() {
 }
 
 $(document).ready(function(){
-    var date_submission=$('input[name="date"]'); //input with name date in submission form
+    var date_submission=$('input[name="date"]'); //input with name=date in submission form
     var start_date=$('input[name="start_date"]');
     var end_date=$('input[name="end_date"]');
     var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";

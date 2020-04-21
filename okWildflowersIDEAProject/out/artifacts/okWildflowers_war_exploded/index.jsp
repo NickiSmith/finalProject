@@ -43,7 +43,7 @@
 
       <!-- Tab panes -->
       <div class="tab-content ">
-        <!-- Create Report Tab Panel -->
+        <!-- Create Observation Tab Panel -->
         <div class="tab-pane active" id="create_observation">
           <form id = "create_observation_form">
             <div><label>Date of observation:&nbsp</label><input placeholder="MM/DD/YYYY" name="date" autocomplete="off"></div>
@@ -154,7 +154,7 @@
           </form>
         </div>
 
-        <!-- Query Report Tab Panel: dropdowns are populated by main.js -->
+        <!-- Query Observation Tab Panel: dropdowns are populated by main.js -->
         <div class="tab-pane" id="query_observation">
           <form id = "query_observation_form">
 

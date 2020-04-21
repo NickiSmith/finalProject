@@ -48,10 +48,9 @@ function mapInitialization(observations) {
         //using the replace function works for existing non-null records in db, but new submissions cause an error that requires page refresh
         // common = common.replace('_', '\'');
         // null values in common name column cause replace function to create an error; if statement works for queries, but icons disappear
-    //     if (common != null){
-    //         common = common.replace('_', '\'');
-    //         return common;
-    // }
+        if (common != null){
+            common = common.replace(/_/g, '\'');
+    }
 
         var contentStr = '<h4>Observation Details</h4><hr>';
         contentStr += '<p><b>' + 'Common name' + ':</b>&nbsp' + common + '</p>';
