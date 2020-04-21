@@ -130,7 +130,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
         if (genusParam == null && commonParam == null && countyParam == null && biomeParam == null) {
             String sql = "select id, habitat, common_name, biome, recorded_by, county, date, " +
                     "scientific_name, ST_X(geom) as " +
-                    "longitude, ST_Y(geom) as latitude from wildflowers";
+                    "longitude, ST_Y(geom) as latitude from okwildflowers";
             queryObservationHelper(sql,list);
         }
 
