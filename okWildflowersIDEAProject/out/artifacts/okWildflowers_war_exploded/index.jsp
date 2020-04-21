@@ -322,7 +322,6 @@
                   <li data-target="#myCarousel" data-slide-to="5"></li>
                   <li data-target="#myCarousel" data-slide-to="6"></li>
                   <li data-target="#myCarousel" data-slide-to="7"></li>
-                  <li data-target="#myCarousel" data-slide-to="8"></li>
               </ol>
 
               <!-- Wrapper for slides -->
@@ -365,7 +364,7 @@
           </div>
 
           <!-- <img src="img/okregion.png" height="250" width="375">; -->
-          <img src="img/text3.png" height="450" width="550">;
+          <img src="img/text4.png" height="450" width="550">;
       </div>
 
     </div>
