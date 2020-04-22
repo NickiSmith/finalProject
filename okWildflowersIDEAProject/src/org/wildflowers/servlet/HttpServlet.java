@@ -139,7 +139,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
         String startDate = request.getParameter("start_date");
         String endDate = request.getParameter("end_date");
 
-        //nested if statements to generate sql query statement from user input: refactor this using hashmap??
+        //nested if statements to generate sql query statement from user input: refactor this using hashmap?
         if (startDate == null) {
             if (endDate == null) {
                 if (genusParam == null) {

@@ -21,14 +21,19 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6Xpbv0WISWCAQWBY05c5ln8P6gPf1Bts&libraries=geometry,places">
   </script>
 
+  <!-- Custom font -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Satisfy&display=swap" rel="stylesheet">
+
   <!-- Custom styles -->
   <link rel="stylesheet" href="css/style.css">
+
+
 
 </head>
 
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <a class="navbar-brand">Oklahoma Wildflower Map</a>
+<nav class="navbar navbar-inverse navbar-fixed-top" id="title">
+  <a class="navbar-brand">Wildflowers of Oklahoma</a>
 </nav>
 
 <div class="container-fluid">
@@ -37,18 +42,78 @@
 
       <!-- Tab Navis-->
       <ul class="nav nav-tabs">
-        <li class="active"><a href="#create_observation" data-toggle="tab">Submit Observation</a></li>
-        <li><a href="#query_observation" data-toggle="tab">Query Database</a></li>
+        <li class="active"><a href="#welcome" data-toggle="tab">Welcome!</a></li>
+        <li><a href="#create_observation" data-toggle="tab">Submit</a></li>
+        <li><a href="#query_observation" data-toggle="tab">Explore</a></li>
       </ul>
 
       <!-- Tab panes -->
       <div class="tab-content ">
-        <!-- Create Observation Tab Panel -->
-        <div class="tab-pane active" id="create_observation">
-          <form id = "create_observation_form">
-            <div><label>Date of observation:&nbsp</label><input placeholder="MM/DD/YYYY" name="date" autocomplete="off"></div>
+        <div class="tab-pane active" id="welcome">
 
-            <div><label>Biome:&nbsp</label><select name="biome">
+          <div id="welcomeText"><img src="img/text2.png" height="100%" width="100%"></div>
+
+          <div id="okregions">Biome Regions of Oklahoma</div>
+          <!--    image carousel div     -->
+          <div id="myCarousel" class="carousel slide" data-interval="false">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+              <li data-target="#myCarousel" data-slide-to="4"></li>
+              <li data-target="#myCarousel" data-slide-to="5"></li>
+              <li data-target="#myCarousel" data-slide-to="6"></li>
+              <li data-target="#myCarousel" data-slide-to="7"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="img/okregion.png" alt="region">
+              </div>
+              <div class="item">
+                <img src="img/region1.png" alt="region">
+              </div>
+              <div class="item">
+                <img src="img/region2.png" alt="region">
+              </div>
+              <div class="item">
+                <img src="img/region3.png" alt="region">
+              </div>
+              <div class="item">
+                <img src="img/region4.png" alt="region">
+              </div>
+              <div class="item">
+                <img src="img/region5.png" alt="region">
+              </div>
+              <div class="item">
+                <img src="img/region6.png" alt="region">
+              </div>
+              <div class="item">
+                <img src="img/region7.png" alt="region">
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+        </div>
+        <!-- Create Observation Tab Panel -->
+        <div class="tab-pane" id="create_observation">
+          <form id = "create_observation_form">
+            <div><label>Date of observation&nbsp</label><input class="form-control" placeholder="mm/dd/yyyy" name="date" autocomplete="off"></div>
+
+            <div><label>Biome&nbsp</label><select class="form-control" name="biome">
               <option value=''>Select a region</option>
               <option value='1'>Region 1</option>
               <option value='2'>Region 2</option>
@@ -58,8 +123,8 @@
               <option value='6'>Region 6</option>
               <option value='7'>Region 7</option>
             </select></div>
-            <div><label>County:</label>
-              <select name="county">
+            <div><label>County&nbsp</label>
+              <select class="form-control" name="county">
                 <option value=''>Select a county</option>
                   <option value='Adair'>Adair</option>
                   <option value='Alfalfa'>Alfalfa</option>
@@ -139,18 +204,16 @@
                   <option value='Woods'>Woods</option>
                   <option value='Woodward'>Woodward</option>
               </select>
-              <div><label>Genus:&nbsp</label><input placeholder="genus" name="genus"></div>
-              <div><label>Common name:&nbsp</label><input placeholder="Common name (required)" name="common_name" required></div>
-              <div><label>Scientific name&nbsp</label><input placeholder="Scientific name" name="scientific_name"></div>
-              <div><label>Habitat:&nbsp</label><input id="habitat" placeholder="Description (max 500 characters)" name="habitat" maxlength="500"></div>
-              <div><label>Recorded by:&nbsp</label><input placeholder="Your name" name="recorded_by"></div>
+              <div><label>Genus&nbsp</label><input class="form-control" placeholder="genus" name="genus"></div>
+              <div><label>Common name&nbsp</label><input class="form-control" placeholder="Common name (required)" name="common_name" required></div>
+              <div><label>Scientific name&nbsp</label><input class="form-control" placeholder="Scientific name" name="scientific_name"></div>
+              <div><label>Habitat&nbsp</label><input class="form-control" id="habitat" placeholder="Description (max 500 characters)" name="habitat" maxlength="500"></div>
+              <div><label>Recorded by&nbsp</label><input class="form-control" placeholder="Your name" name="recorded_by"></div>
             </div>
-            <div><label>Address:</label>
-              <input id="autocomplete" placeholder="Address" >
+            <div><label>Address&nbsp</label>
+              <input class="form-control" id="autocomplete" placeholder="Address" >
             </div>
-            <button type="submit" class="btn btn-default" id="report_submit_btn">
-              <span class="glyphicon glyphicon-star"></span> Submit
-            </button>
+            <div class="button_div"><button type="submit" class="btn btn-info" id="report_submit_btn">Submit</button></div>
           </form>
         </div>
 
@@ -158,8 +221,8 @@
         <div class="tab-pane" id="query_observation">
           <form id = "query_observation_form">
 
-                <div><label>Genus:</label>
-                    <select id="genus" name="genus">
+                <div><label>Genus&nbsp</label>
+                    <select class="form-control" id="genus" name="genus">
                       <option value="">Choose the genus</option>
                       <option value="Achillea">Achillea</option>
                       <option value="Aphanostephus">Aphanostephus</option>
@@ -173,8 +236,8 @@
                     </select>
                 </div>
 
-                <div><label>Common name:</label>
-                  <select id="common_name" name="common">
+                <div><label>Common name&nbsp</label>
+                  <select class="form-control" id="common_name" name="common">
                     <option value="">Choose the common name</option>
                     <option value="antelopehorns">antelopehorns</option>
                     <option value="Arkansas dozedaisy">Arkansas dozedaisy</option>
@@ -222,8 +285,8 @@
                   </select>
                 </div>
 
-                <div><label>Biome:</label>
-                  <select id="biome" name="biome">
+                <div><label>Biome&nbsp</label>
+                  <select class="form-control" id="biome" name="biome">
                                 <option value="">Choose the biome region</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -235,8 +298,8 @@
                   </select>
                 </div>
 
-                <div><label>County:</label>
-                  <select id="county_auto" name="county">
+                <div><label>County&nbsp</label>
+                  <select class="form-control" id="county_auto" name="county">
                     <option value="">Choose the county</option>
                     <option value='Adair'>Adair</option>
                     <option value='Alfalfa'>Alfalfa</option>
@@ -317,27 +380,79 @@
                     <option value='Woodward'>Woodward</option>
                   </select>
                 </div>
-            <div>
-              <label>Start Date:</label>
-              <input placeholder="MM/DD/YYYY" name="start_date" autocomplete="off">
-            </div>
-            <div>
-              <label>End Date:</label>
-              <input placeholder="MM/DD/YYYY" name="end_date" autocomplete="off">
-            </div>
 
-              <button type="submit" class="btn btn-default">
-                <span class="glyphicon glyphicon-star"></span> Submit the query
+            <div>
+              <label>Start Date&nbsp</label>
+              <input class="form-control" placeholder="mm/dd/yyyy" name="start_date" autocomplete="off">
+            </div>
+            <div>
+              <label>End Date&nbsp</label>
+              <input class="form-control" placeholder="mm/dd/yyyy" name="end_date" autocomplete="off">
+            </div>
+            <div class="button_div">
+              <button type="submit" class="btn btn-info">
+                Submit
               </button>
-
+            </div>
             </form>
+
+          <%--    Wildlflower img carousel      --%>
+          <div id="wildflowerCarousel" class="carousel slide" data-interval="false">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#wildflowerCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#wildflowerCarousel" data-slide-to="1"></li>
+              <li data-target="#wildflowerCarousel" data-slide-to="2"></li>
+              <li data-target="#wildflowerCarousel" data-slide-to="3"></li>
+              <li data-target="#wildflowerCarousel" data-slide-to="4"></li>
+              <li data-target="#wildflowerCarousel" data-slide-to="5"></li>
+              <li data-target="#wildflowerCarousel" data-slide-to="6"></li>
+              <li data-target="#wildflowerCarousel" data-slide-to="7"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <img src="img/okregion.png" alt="region">
+              </div>
+              <div class="item">
+                <img src="img/region1.png" alt="region">
+              </div>
+              <div class="item">
+                <img src="img/region2.png" alt="region">
+              </div>
+              <div class="item">
+                <img src="img/region3.png" alt="region">
+              </div>
+              <div class="item">
+                <img src="img/region4.png" alt="region">
+              </div>
+              <div class="item">
+                <img src="img/region5.png" alt="region">
+              </div>
+              <div class="item">
+                <img src="img/region6.png" alt="region">
+              </div>
+              <div class="item">
+                <img src="img/region7.png" alt="region">
+              </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
 
           </div>
         </div>
-      <div>
-        <img src="img/okregions.png" height="225" width="350">
-      </div>
-      </div>
+    </div>
 
     <div id="map-canvas" class="col-xs-9"></div>
 

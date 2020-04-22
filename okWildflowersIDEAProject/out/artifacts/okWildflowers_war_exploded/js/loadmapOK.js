@@ -45,13 +45,11 @@ function mapInitialization(observations) {
 
         // Create the infoWindow content
         var common = e['common_name'];
-        //using the replace function works for existing non-null records in db, but new submissions cause an error that requires page refresh
-        // common = common.replace('_', '\'');
-        // null values in common name column cause replace function to create an error; if statement works for queries, but icons disappear
+
+        // replace underscores in common name with apostrophes
         if (common != null){
             common = common.replace(/_/g, '\'');
     }
-
         var contentStr = '<h4>Observation Details</h4><hr>';
         contentStr += '<p><b>' + 'Common name' + ':</b>&nbsp' + common + '</p>';
         contentStr += '<p><b>' + 'Scientific name' + ':</b>&nbsp' + e['scientific_name'] + '</p>';
@@ -69,67 +67,71 @@ function mapInitialization(observations) {
         if (genus == 'Achillea') {
             icon = {
                 url: 'img/tickseed.svg',
-                scaledSize: new google.maps.Size(30, 30),}
+                scaledSize: new google.maps.Size(40, 40),}
         } else if (genus == 'Aphanostephus') {
             icon = {
                 url: 'img/dogwood.svg',
-                scaledSize: new google.maps.Size(30, 30), // scaled size
+                scaledSize: new google.maps.Size(40, 40), // scaled size
             }
         } else if (genus == 'Asclepias') {
             icon = {
                 url: 'img/bluebonnet.svg',
-                scaledSize: new google.maps.Size(30, 30), // scaled size
+                scaledSize: new google.maps.Size(40, 40), // scaled size
             }
         } else if (genus == 'Castilleja') {
             icon = {
                 url: 'img/pricklypoppy.svg',
-                scaledSize: new google.maps.Size(30, 30), // scaled size
+                scaledSize: new google.maps.Size(40, 40), // scaled size
             }
         } else if (genus == 'Coreopsis') {
             icon = {
                 url: 'img/bachelorbutton.svg',
-                scaledSize: new google.maps.Size(30, 30), // scaled size
+                scaledSize: new google.maps.Size(40, 40), // scaled size
             }
         } else if (genus == 'Echinacea') {
             icon = {
                 url: 'img/indianpaintbrush.svg',
-                scaledSize: new google.maps.Size(30, 30), // scaled size
+                scaledSize: new google.maps.Size(40, 40), // scaled size
             }
         } else if (genus == 'Gaillardia') {
             icon = {
                 url: 'img/indianblanket.svg',
-                scaledSize: new google.maps.Size(30, 30), // scaled size
+                scaledSize: new google.maps.Size(40, 40), // scaled size
             }
         } else if (genus == 'Phlox') {
             icon = {
                 url: 'img/purplemallo.svg',
-                scaledSize: new google.maps.Size(30, 30), // scaled size
+                scaledSize: new google.maps.Size(40, 40), // scaled size
             }
 
         } else if (genus == 'Rudbeckia') {
             icon = {
                 url: 'img/canola.svg',
-                scaledSize: new google.maps.Size(30, 30), // scaled size
+                scaledSize: new google.maps.Size(40, 40), // scaled size
             }
 
         } else if (genus == 'Silene') {
             icon = {
                 url: 'img/prairieanemone.svg',
-                scaledSize: new google.maps.Size(30, 30), // scaled size
+                scaledSize: new google.maps.Size(40, 40), // scaled size
             }
 
         } else if (genus == 'Trifolium') {
             icon = {
                 url: 'img/yellowladyslipper.svg',
-                scaledSize: new google.maps.Size(30, 30), // scaled size
+                scaledSize: new google.maps.Size(40, 40), // scaled size
             }
 
         } else if (genus == 'Trillium') {
             icon = {
                 url: 'img/coneflower.svg',
-                scaledSize: new google.maps.Size(30, 30), // scaled size
+                scaledSize: new google.maps.Size(40, 40), // scaled size
             }
-
+        } else {
+            icon = {
+                url: 'img/sunflower.png',
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+            }
         }
 
         var marker = new google.maps.Marker({ // Set the marker
