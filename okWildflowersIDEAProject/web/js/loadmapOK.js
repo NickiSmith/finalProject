@@ -24,10 +24,11 @@ function showAllObservations() {
 
 function mapInitialization(observations) {
     var mapOptions = {
-        mapTypeId : google.maps.MapTypeId.TERRAIN, // Set the type of Map CHANGED FROM roadmap
+        mapTypeId : google.maps.MapTypeId.ROADMAP, // Set the type of Map
     };
     console.log(observations);
-console.log("inside mapInitialization")
+    console.log("inside mapInitialization")
+
     // Render the map within the empty div
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
@@ -42,18 +43,13 @@ console.log("inside mapInitialization")
 
         bounds.extend(latlng);
 
-        // Create the infoWindow content (simplified to just county)
+        // Create the infoWindow content
         var common = e['common_name'];
-        // var commonR;
-        // if (common != null){
-        //     commonR = common.replace('_', '\'');
-        //     return commonR;
-        // }
-        // else {
-        //     commonR = common;
-        //     return commonR;
-        // }
 
+        // replace underscores in common name with apostrophes
+        if (common != null){
+            common = common.replace(/_/g, '\'');
+        }
         var contentStr = '<h4>Observation Details</h4><hr>';
         contentStr += '<p><b>' + 'Common name' + ':</b>&nbsp' + common + '</p>';
         contentStr += '<p><b>' + 'Scientific name' + ':</b>&nbsp' + e['scientific_name'] + '</p>';
@@ -63,35 +59,81 @@ console.log("inside mapInitialization")
         contentStr += '<p><b>' + 'Recorded by' + ':</b>&nbsp' + e['recorded_by'] + '</p>';
         contentStr += '<p><b>' + 'Date' + ':</b>&nbsp' + e['date'] + '</p>';
 
-
+        //add custom icons for each genus
         var icon;
-        if (e['genus'] == 'Achillea') {
-            icon = 'img/tickseed.svg'
-        } else if (e['genus'] == 'Aphanostephus') {
-            icon = 'img/dogwood.svg'
-        } else if (e['genus'] == 'Asclepias') {
-            icon = 'img/bluebonnet.svg'
-        } else if (e['genus'] == 'Castilleja') {
-            icon = 'img/pricklypoppy.svg'
-        } else if (e['genus'] == 'Coreopsis') {
-            icon = 'img/bachelorbutton.svg'
-        } else if (e['genus'] == 'Echinacea') {
-            icon = 'img/indianpaintbrush.svg'
-        } else if (e['genus'] == 'Gaillardia') {
-            icon = 'img/indianblanket.svg'
-        } else if (e['genus'] == 'Phlox') {
-            icon = 'img/purplemallo.svg'
-        } else if (e['genus'] == 'Rudbeckia') {
-            icon = 'img/canola.svg'
-        } else if (e['genus'] == 'Silene') {
-            icon = 'img/prairieanemone.svg'
-        } else if (e['genus'] == 'Trifolium') {
-            icon = 'img/yellowladyslipper.svg'
-        } else if (e['genus'] == 'Trillium') {
-            icon = 'img/coneflower.svg'
+        var genus = e['genus'];
+
+        console.log(">>>>> GENUS: ", genus);
+
+        if (genus=='Achillea') {
+            icon = {
+                url: 'img/tickseed.svg',
+                scaledSize: new google.maps.Size(40, 40),}
+        } else if (genus == 'Aphanostephus') {
+            icon = {
+                url: 'img/dogwood.svg',
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+            }
+        } else if (genus == 'Asclepias') {
+            icon = {
+                url: 'img/bluebonnet.svg',
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+            }
+        } else if (genus == 'Castilleja') {
+            icon = {
+                url: 'img/pricklypoppy.svg',
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+            }
+        } else if (genus == 'Coreopsis') {
+            icon = {
+                url: 'img/bachelorbutton.svg',
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+            }
+        } else if (genus == 'Echinacea') {
+            icon = {
+                url: 'img/indianpaintbrush.svg',
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+            }
+        } else if (genus == 'Gaillardia') {
+            icon = {
+                url: 'img/indianblanket.svg',
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+            }
+        } else if (genus == 'Phlox') {
+            icon = {
+                url: 'img/purplemallo.svg',
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+            }
+
+        } else if (genus == 'Rudbeckia') {
+            icon = {
+                url: 'img/canola.svg',
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+            }
+
+        } else if (genus == 'Silene') {
+            icon = {
+                url: 'img/prairieanemone.svg',
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+            }
+
+        } else if (genus == 'Trifolium') {
+            icon = {
+                url: 'img/yellowladyslipper.svg',
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+            }
+
+        } else if (genus == 'Trillium') {
+            icon = {
+                url: 'img/coneflower.svg',
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+            }
+        } else {
+            icon = {
+                url: 'img/sunflower.png',
+                scaledSize: new google.maps.Size(40, 40), // scaled size
+            }
         }
-
-
 
         var marker = new google.maps.Marker({ // Set the marker
             position : latlng, // Position marker to coordinates
@@ -99,7 +141,6 @@ console.log("inside mapInitialization")
             customInfo: contentStr,
             icon: icon,
         });
-
 
         // Add a Click Listener to the marker (creates infowindow content using contentStr (customInfo)
         google.maps.event.addListener(marker, 'click', function() {

@@ -126,7 +126,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
         String biomeParam = request.getParameter("biome");
 
         if (genusParam == null && commonParam == null && countyParam == null && biomeParam == null) {
-            String sql = "select id, habitat, common_name, biome, recorded_by, county, date, " +
+            String sql = "select id, habitat, common_name, biome, recorded_by, county, date, genus," +
                     "scientific_name, ST_X(geom) as " +
                     "longitude, ST_Y(geom) as latitude from wildflowers";
             queryObservationHelper(sql,list);
@@ -226,6 +226,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
             m.put("recorded_by", res.getString("recorded_by"));
             m.put("biome", res.getString("biome"));
             m.put("habitat", res.getString("habitat"));
+            m.put("genus", res.getString("genus"));
             list.put(m);
         }
     }

@@ -1,21 +1,20 @@
 
 function queryObservation(event) {
     event.preventDefault(); // stop form from submitting normally
-console.log(event);
+    console.log(event);
 
     var a = $("#query_observation_form").serializeArray();
     a.push({ name: "tab_id", value: "1" });
     a = a.filter(function(item){
         console.log(item);
         return item.value != '';});
-        $.ajax({
+    $.ajax({
         url: 'HttpServlet',
         type: 'POST',
         data: a,
         success: function(observations) {
             mapInitialization(observations);
             console.log(observations);
-            // alert("A query was submitted!");
         },
         error: function(xhr, status, error) {
             alert("Status: " + status + "\nError: " + error);
@@ -34,7 +33,9 @@ function createObservation(event) {
     a.push({ name: "tab_id", value: "0" });
     a.push({name: "longitude", value: longitude});
     a.push({name: "latitude", value: latitude});
-    a = a.filter(function(item){return item.value != '';});
+    a = a.filter(function(item){
+        console.log(item);
+        return item.value != '';});
     $.ajax({
         url: 'HttpServlet',
         type: 'POST',
