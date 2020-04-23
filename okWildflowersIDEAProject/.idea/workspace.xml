@@ -6,16 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bde491a7-def9-4ea2-a625-11f8a78a36e2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/okWildflowers_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/okWildflowers_war_exploded/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/wildflowers/servlet/HttpServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/wildflowers/servlet/HttpServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/img/regioon3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/loadformOK.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/loadformOK.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/loadmapOK.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/loadmapOK.js" afterDir="false" />
-    </list>
+    <list default="true" id="bde491a7-def9-4ea2-a625-11f8a78a36e2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -248,7 +239,7 @@
       <workItem from="1586891385908" duration="7845000" />
       <workItem from="1587158576414" duration="1950000" />
       <workItem from="1587160941772" duration="21868000" />
-      <workItem from="1587528319416" duration="12216000" />
+      <workItem from="1587528319416" duration="12819000" />
     </task>
     <servers />
   </component>
