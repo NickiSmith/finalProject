@@ -236,19 +236,19 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
                 if (commonParam == null) {
                     if (countyParam == null){
                         if (biomeParam == null) {
-                            sql = " where date <= " + "'" + endDate + "'";
+                            sql += " where date <= " + "'" + endDate + "'";
                         }
                         if (biomeParam != null) {
-                            sql += " where biome = " + "'" + biomeParam + "'and date <= " + endDate + "'";
+                            sql += " where biome = " + "'" + biomeParam + "'and date <= " + "'" + endDate + "'";
                         }
                     }
                     if (countyParam != null) {
                         if (biomeParam == null) {
-                            sql += " where county = " + "'" + countyParam + "'and date <= " + endDate +  "'";
+                            sql += " where county = " + "'" + countyParam + "'and date <= " + "'" + endDate +  "'";
                         }
                         if (biomeParam != null) {
                             sql += " where county = " + "'"
-                                    + countyParam + "' and biome = '" + biomeParam + "'and date <= " + endDate +  "'";
+                                    + countyParam + "' and biome = '" + biomeParam + "'and date <= " + "'" + endDate +  "'";
                         }
                     }
                 }
@@ -256,20 +256,20 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
                     if (countyParam == null) {
                         if (biomeParam != null) {
                             sql += " where common_name = " + "'"
-                                    + commonParam + "' and biome = '" + biomeParam + "'and date <= " + endDate +  "'";
+                                    + commonParam + "' and biome = '" + biomeParam + "'and date <= " + "'" + endDate +  "'";
                         }
                         if (biomeParam == null) {
-                            sql += " where common_name = " + "'" + commonParam + "'and date <= " + endDate +  "'";
+                            sql += " where common_name = " + "'" + commonParam + "'and date <= " + "'" + endDate +  "'";
                         }
                     }
                     if (countyParam != null) {
                         if (biomeParam == null) {
                             sql += " where common_name = " + "'" + commonParam + "'" +
-                                    "and county = '" + countyParam + "'and date <= " + endDate +  "'";
+                                    "and county = '" + countyParam + "'and date <= " + "'" + endDate +  "'";
                         }
                         if (biomeParam != null) {
                             sql += " where common_name = " + "'" + commonParam + "'" +
-                                    "and county = '" + countyParam + "' and biome = '" + biomeParam + "'and date <= " + endDate +  "'";
+                                    "and county = '" + countyParam + "' and biome = '" + biomeParam + "'and date <= " + "'" + endDate +  "'";
                         }
                     }
                 }
@@ -277,23 +277,22 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
                 if (genusParam != null) {
                     if (commonParam == null) {
                         if (countyParam == null) {
-
                             if (biomeParam == null) {
-                                sql += " where genus = " + "'" + genusParam + "'and date <= " + endDate +  "'";
+                                sql += " where genus = " + "'" + genusParam + "'and date <= " + "'" + endDate +  "'";
                             }
                             if (biomeParam != null) {
                                 sql += " where genus = "
-                                        + "'" + genusParam + "' and biome = '" + biomeParam + "'and date <= " + endDate +  "'";
+                                        + "'" + genusParam + "' and biome = '" + biomeParam + "' and date <= " + "'" + endDate +  "'";
                             }
                         }
                         if (countyParam != null) {
                             if (biomeParam == null) {
                                 sql += " where genus = "
-                                        + "'" + genusParam + "' and county = '" + countyParam + "'and date <= " + endDate +  "'";
+                                        + "'" + genusParam + "' and county = '" + countyParam + "'and date <= " + "'" + endDate +  "'";
                             }
                             if (biomeParam != null) {
                                 sql += " where genus = "
-                                        + "'" + genusParam + "' and county = '" + countyParam + "' and biome = '" + biomeParam + "'and date <= " + endDate +  "'";
+                                        + "'" + genusParam + "' and county = '" + countyParam + "' and biome = '" + biomeParam + "'and date <= " + "'" + endDate +  "'";
                             }
                         }
                     }
@@ -301,22 +300,22 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
                         if (countyParam == null) {
                             if (biomeParam == null) {
                                 sql += " where genus = "
-                                        + "'" + genusParam + "' and common_name = '" + commonParam + "'and date <= " + endDate +  "'";
+                                        + "'" + genusParam + "' and common_name = '" + commonParam + "'and date <= " + "'" + endDate +  "'";
                             }
                             if (biomeParam != null) {
                                 sql += " where genus = "
-                                        + "'" + genusParam + "' and common_name = '" + commonParam + "' and biome = '" + biomeParam + "'and date <= " + endDate + "'";
+                                        + "'" + genusParam + "' and common_name = '" + commonParam + "' and biome = '" + biomeParam + "'and date <= " + "'" + endDate + "'";
                             }
                         }
                         if (countyParam != null) {
                             if (biomeParam == null) {
                                 sql += " where common_name = " + "'" + commonParam + "' " +
-                                        "and county = '" + countyParam + "' and genus =" + "'" + genusParam + "'and date <= " + endDate + "'";
+                                        "and county = '" + countyParam + "' and genus =" + "'" + genusParam + "'and date <= " + "'" + endDate + "'";
                             }
                             if (biomeParam != null) {
                                 sql += " where common_name = " + "'" + commonParam + "' " +
                                         "and county = '" + countyParam + "' and genus =" + "'" + genusParam + "' and biome =" + "'"
-                                        + biomeParam + "'and date <= " + endDate + "'";
+                                        + biomeParam + "'and date <= " + "'" + endDate + "'";
                             }
                         }
                     }
@@ -330,7 +329,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
                     if (commonParam == null) {
                         if (countyParam == null){
                             if (biomeParam == null) {
-                                sql = " where date >= " + "'" + startDate + "'";
+                                sql += " where date >= " + "'" + startDate + "'";
                             }
                             if (biomeParam != null) {
                                 sql += " where biome = " + "'" + biomeParam + "'and date >= " + "'" + startDate + "'";
@@ -421,7 +420,7 @@ public class HttpServlet extends javax.servlet.http.HttpServlet {
                     if (commonParam == null) {
                         if (countyParam == null){
                             if (biomeParam == null) {
-                                sql = " where date between " + "'" + startDate + "'and date between " + "'" + startDate + "' and " + "'" + endDate + "'";
+                                sql += " where date between " + "'" + startDate + "' and " + "'" + endDate + "'";
                             }
                             if (biomeParam != null) {
                                 sql += " where biome = " + "'" + biomeParam + "'and date between " + "'" + startDate + "' and " + "'" + endDate + "'";
