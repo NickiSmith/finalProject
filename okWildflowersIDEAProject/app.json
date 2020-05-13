@@ -1,0 +1,12 @@
+{
+  "name": "Wildflowers of Oklahoma",
+  "description": "This app allows users to report wildflower sightings in the state of Oklahoma .",
+  "repository": https://github.com/LauraKSmith/finalProject,
+
+  },
+}
+  "buildpacks": [
+    {
+      "url": "https://github.com/LauraKSmith/finalProject"
+    }
+  ],

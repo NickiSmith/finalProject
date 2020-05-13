@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
   <!-- Google maps API -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6Xpbv0WISWCAQWBY05c5ln8P6gPf1Bts&libraries=geometry,places">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5qBRmbd8HkhuQFbY4bL9tC0Nae7qMJkU&libraries=geometry,places">
   </script>
 
     <!-- Custom font -->
@@ -458,11 +458,16 @@
         </div>
 
 
+
     </div>
         <div id="map-canvas" class="col-xs-9"></div>
 </div>
 
+</div>
 
+<!--     Footer       -->
+<footer class="footer"><h3 id="authors">Created by <a class="link" href=https://vagabondmap.com target="_blank"> Laura K. Smith</a> and <a class="link" href=https://nickismith.github.io target="_blank"> Nicki Smith</a>
+<br>Historical wildflower data from <a class="link" href=https://www.torcherbaria.org/ target="_blank"> TORCH</a></footer>
 
 <script src="js/loadformOK.js"></script>
 <script src="js/loadmapOK.js"></script>
@@ -470,3 +475,9 @@
 
 </body>
 </html>
+
+<!--
+turn your project into a maven project: https://www.youtube.com/watch?v=s-nXWFQMXY0
+connect heroku to postgres: https://www.youtube.com/watch?v=f76zBj_M5JY
+
+-->

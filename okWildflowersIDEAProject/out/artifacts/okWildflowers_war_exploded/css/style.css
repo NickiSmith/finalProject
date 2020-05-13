@@ -53,3 +53,9 @@ form {
 #welcomeText {
     padding-top: 10px;
 }
+
+.footer {
+    background: #bcbcaa;
+    color: #f8f9fa;
+    font-size: 1.5em;
+}

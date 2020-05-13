@@ -1,35 +1,3 @@
---
--- PostgreSQL database dump
---
-
--- Dumped from database version 12.1
--- Dumped by pg_dump version 12.1
-
--- Started on 2020-04-21 18:37:16
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
-DROP DATABASE okwildflowers;
---
--- TOC entry 3696 (class 1262 OID 18601)
--- Name: okwildflowers; Type: DATABASE; Schema: -; Owner: postgres
---
-
-CREATE DATABASE okwildflowers WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'English_United States.1252' LC_CTYPE = 'English_United States.1252';
-
-
-ALTER DATABASE okwildflowers OWNER TO postgres;
-
-\connect okwildflowers
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
